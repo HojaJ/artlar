@@ -1,0 +1,111 @@
+.shop {
+  margin: 50px 0;
+}
+.shop__sidebar {
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+
+
+.shop__sidebar__accordion {
+  .card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+
+    .card-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
+
+  .card-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    a {
+      display:block;
+    }
+  }
+}
+
+.shop__sidebar__categories {
+
+  ul {
+    max-height: 225px;
+    height: auto;
+    overflow-y: scroll;
+    outline: none;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    li {
+        font-size: 16px;
+        line-height: 1.4;
+
+      input[type=checkbox]{
+        border: none;
+        outline: none;
+        background-color: $font_color;
+        margin-right: 10px;
+      }
+
+    }
+  }
+}
+
+
+.shop__sidebar__accordion .card-heading a:after,
+.shop__sidebar__accordion .card-heading > a.active[aria-expanded=false]:after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  font-size: 24px;
+  font-weight: 700;
+  color: $font_color;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  line-height: 20px;
+}
+
+.shop__sidebar__accordion .card-heading.active a:after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  font-size: 24px;
+  font-weight: 700;
+  color: $font_color;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  line-height: 20px;
+}
+
+.product__item {
+  margin-bottom: 80px;
+    &__text {
+      padding-top: 20px;
+      h6 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: -10px;
+      }
+      a {
+        font-style: italic;
+        font-size: 1.5rem;
+        color:#D8D8D8;
+        margin-bottom: -5px;
+      }
+      h5 {
+        font-size: 1.5rem;
+      }
+    }
+}
+

@@ -1,0 +1,63 @@
+.header{
+  margin: 0 10px 40px;
+  padding-top: 25px;
+
+  .navbar-collapse {
+    margin-top: 20px;
+    border-bottom: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+  }
+
+  .navbar-toggler {
+    font-size: 2.5rem;
+    outline:none;
+    border:none;
+    padding:0;
+    color: $font-color;
+  }
+
+  .nav-link {
+    color: $font-color;
+    font-weight: 700;
+    font-size: 2.375rem;
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 1.375rem;
+    }
+  }
+  .logo {
+    max-width: 270px;
+    margin: 0 auto;
+    display: block;
+    @media screen and (max-width: $breakpoint-lg) {
+      max-width: 170px;
+    }
+  }
+  &__icons-item {
+    margin-right: 25px;
+    font-size: 24px;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  .navbar-toggler {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .w-lg-100 {
+    width: 100%;
+  }
+}
+
+
+//@import "../components/cart/cart";
+//@import "../components/cart_card/cart_card";
+@import "../components/search/search";
+//@import "../components/lang_switcher/lang_switcher";

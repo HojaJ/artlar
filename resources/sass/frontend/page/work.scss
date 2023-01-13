@@ -1,0 +1,75 @@
+.view_in {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  h4 {
+    color:#D8D8D8;
+    font-style: italic;
+  }
+
+  ul {
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 1.625rem;
+    line-height: 1.2;
+  }
+
+  &__price{
+    span {
+      font-size: 1.75rem;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 500;
+    }
+    .button-reverse {
+      margin-top: 22px;
+      color:$font_color;
+      background-color: transparent;
+      border: 1px solid $font_color;
+    }
+  }
+}
+.work-accordion {
+  margin: 100px 0 60px;
+}
+.ui-accordion-header {
+  line-height: 1.4;
+}
+
+.rarityModal h5{
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+.rarityModal h6{
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: #000;
+}
+.rarityModal p {
+  font-size: 1.15rem;
+  color: #000;
+}
+.rarityModal span {
+  color: #767575;
+  font-size: 0.7rem;
+  line-height: 1px;
+}
+.rarityModal .button {
+  border-radius: 10px;
+  color: $font_color;
+  background-color: $background_color;
+  margin-top: 20px;
+  padding: 16px 40px 10px;
+}

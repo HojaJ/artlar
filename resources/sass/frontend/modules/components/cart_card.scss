@@ -1,0 +1,39 @@
+.cart-card {
+  margin-bottom: 100px;
+  &__info {
+    color: $background_color;
+    &-title {
+      color: $background_color;
+    }
+    &-desc {
+      color: $background_color;
+      font-size: 14px;
+    }
+    &-price {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &-delete{
+      text-decoration: underline;
+      font-style: italic;
+      &:hover{
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+.price-number {
+  border: 1px solid $background_color;
+  font-size: 22px;
+  line-height: 1;
+
+  button {
+    outline: none;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    color:$background_color;
+    font-size: 22px;
+  }
+}

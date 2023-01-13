@@ -1,0 +1,25 @@
+
+.contact-page {
+  margin-bottom:200px;
+  .row {
+    margin-top: 100px;
+  }
+}
+.contact__info {
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 1.7rem;
+    }
+    @media screen and (min-width: $breakpoint-lg) {
+      font-size: 2rem;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      font-size: 2.5rem;
+    }
+
+  }
+}

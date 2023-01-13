@@ -1,0 +1,144 @@
+$color-dark: #313436;
+$background_color:#fff;
+.lang {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.lang__current {
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  transition: all 0.2s ease-out;
+  border-radius: 3px;
+  padding: 0.3rem 0 0 0.3rem;
+  font-size: 24px;
+  width: 60px;
+
+  span {
+    display: inline-block;
+  }
+
+  .arrow {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+
+.lang__options {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: all .36s ease-out;
+  display: none;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+  .lang.show-options & {
+    display: block;
+    z-index: 5;
+  }
+
+  .lang.anim-options & {
+    opacity: 1;
+  }
+
+  .lang.show-shadow & {
+    box-shadow: 0 2px 12px -4px rgba(0, 0, 0, .4);
+  }
+}
+
+.lang__options-list {
+  color: $color-dark;
+  margin: 0;
+  padding: .4rem 0.8em;
+  position: relative;
+  z-index: 5;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0.75em;
+    border-bottom: 1px solid #E1E4E6;
+    transform: translateX(10px);
+    transition: all .24s ease-out;
+    transition-delay: .1s;
+    opacity: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+    white-space: nowrap;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:nth-child(1) {
+      transition-delay: .1s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: .15s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: .2s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: .25s;
+    }
+
+    &:nth-child(5) {
+      transition-delay: .3s;
+    }
+
+    &.selected {
+      color: $background_color;
+    }
+
+    .lang.anim-options & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+#trans-circle {
+  $size: 80px;
+
+  width: $size;
+  height: $size;
+  position: absolute;
+  top: -$size;
+  right: -$size;
+  padding: 0;
+  margin: 0;
+  border: none;
+  // opacity: 0;
+  z-index: 1;
+  transition: all .4s ease-out;
+  transform: scale(.5);
+  overflow: hidden;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.lang.anim-options #trans-circle {
+  transform: scale(9);
+  // transition: all .3s ease-out;
+  // opacity: 1;
+}

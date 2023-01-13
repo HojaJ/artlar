@@ -1,0 +1,103 @@
+.artist-page {
+  margin-top: 100px;
+  padding-bottom: 150px;
+  border-bottom: 1px solid $font_color;
+  h2 {
+    font-size: 6.25rem;
+    text-align: right;
+  }
+  .artist__sticky {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: $breakpoint-lg) {
+  .artist-photo {
+    max-width: 20%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+  }
+}
+.artists-list {
+  margin-top: 100px;
+  border-top: 1px solid $font_color;
+  ul {
+    padding: 100px 0;
+    li {
+      display: inline-block;
+      margin: 5px 15px;
+      a {
+        color: #dddddd;
+        font-size: 1.75rem;
+        font-weight: 500;
+
+        &.active {
+          color:$font_color;
+        }
+      }
+    }
+  }
+}
+.artist__info {
+    &-name {
+      font-weight:700;
+      font-size: 3.375rem;
+      margin-bottom: -3px;
+    }
+  &-prof {
+    font-size: 2.625rem;
+    font-weight: 400;
+  }
+  &-country {
+    font-weight: 600;
+    font-size: 2.25rem;
+    margin-top: 70px;
+  }
+  &-date {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  &-desc {
+    border-top: 1px solid $font_color;
+    margin-top: 20px;
+    padding: 30px 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  .button-cv {
+    border-radius: 5px;
+    padding: 11px 40px 3px 40px;
+  }
+}
+
+.cvModal {
+  .modal-content{
+    background-color: $font_color;
+    border-radius: 2px;
+    border: none;
+  }
+}
+.artist-modal {
+  * {
+    color: $background_color !important;
+  }
+  ul {
+    margin-bottom: 55px;
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 1.2rem;
+    }
+  }
+  h4 {
+    margin-bottom: 5px;
+    font-size:  2.625rem;
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+    }
+  }
+}

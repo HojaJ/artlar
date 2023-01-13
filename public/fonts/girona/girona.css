@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Girona';
+    src: url('Girona.eot');
+    src: local('Girona'),
+        url('Girona.eot?#iefix') format('embedded-opentype'),
+        url('Girona.woff2') format('woff2'),
+        url('Girona.woff') format('woff'),
+        url('Girona.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Girona';
+    src: url('Girona-SemiBold.eot');
+    src: local('Girona-SemiBold'),
+        url('Girona-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Girona-SemiBold.woff2') format('woff2'),
+        url('Girona-SemiBold.woff') format('woff'),
+        url('Girona-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Girona';
+    src: url('Girona-Light.eot');
+    src: local('Girona-Light'),
+        url('Girona-Light.eot?#iefix') format('embedded-opentype'),
+        url('Girona-Light.woff2') format('woff2'),
+        url('Girona-Light.woff') format('woff'),
+        url('Girona-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Girona W05';
+    src: url('Girona-Bold.eot');
+    src: local('Girona-Bold'),
+        url('Girona-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Girona-Bold.woff2') format('woff2'),
+        url('Girona-Bold.woff') format('woff'),
+        url('Girona-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Girona';
+    src: url('Girona-Medium.eot');
+    src: local('Girona-Medium'),
+        url('Girona-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Girona-Medium.woff2') format('woff2'),
+        url('Girona-Medium.woff') format('woff'),
+        url('Girona-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

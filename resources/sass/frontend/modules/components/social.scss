@@ -1,0 +1,9 @@
+.social {
+  margin-left: 48px;
+  @media screen and (max-width: $breakpoint-sm){
+    margin-left: 15px;
+  }
+  .social__link{
+    font-size: 1.875rem;
+  }
+}

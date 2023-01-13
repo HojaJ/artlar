@@ -1,0 +1,39 @@
+.new_slidecard{
+  position: relative;
+  max-width: 840px;
+  margin-top: 100px;
+
+  .swiper-slide {
+    text-align: right;
+  }
+  .slide_all {
+    margin: 50% auto 0;
+  }
+  .slideсard__title {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .slideсard__info {
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 55px;
+    left: -50px;
+     h3 {
+       font-weight: 700;
+       font-size: 1.2rem;
+       @media screen and (max-width: $breakpoint-sm){
+         font-size: 1rem;
+       }
+     }
+     h4 {
+       font-size: 1.5rem;
+       font-style: italic;
+       color: #D8D8D8;
+       @media screen and (max-width: $breakpoint-sm){
+         font-size: 1rem;
+       }
+     }
+   }
+}
+

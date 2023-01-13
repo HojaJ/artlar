@@ -1,0 +1,55 @@
+.newsletter {
+  @media screen and (max-width: $breakpoint-sm){
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+  .btn-newsletter{
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 30%;
+
+  }
+  .newsletter__input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid #FFFFFF;
+    width: 70%;
+    font-weight: 500;
+    font-size: 1.375rem;
+    vertical-align: bottom;
+
+    @media screen and (max-width: $breakpoint-sm){
+      max-width: 200px;
+      font-size: 1.1rem;
+    }
+  }
+  .newsletter__input::placeholder {
+    font-weight: 500;
+    font-size: 1.375rem;
+    color: #D8D8D8;
+    @media screen and (max-width: $breakpoint-sm){
+      font-size: 1.1rem;
+    }
+  }
+  .newsletter__input:-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 1.375rem;
+    color: #D8D8D8;
+    @media screen and (max-width: $breakpoint-sm){
+      font-size: 1.1rem;
+    }
+  }
+  .newsletter__input::-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 1.375rem;
+    color: #D8D8D8;
+    @media screen and (max-width: $breakpoint-sm){
+      font-size: 1.1rem;
+    }
+  }
+
+}

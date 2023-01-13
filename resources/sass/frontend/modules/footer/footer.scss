@@ -1,0 +1,33 @@
+@import "../components/newsletter";
+@import "../components/social";
+
+.footer {
+  border-top: 1px solid #FFFFFF;
+  padding-top: 84px;
+  padding-bottom: 140px;
+  @media screen and (max-width: $breakpoint-lg){
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  &__half{
+    margin-top: 6rem;
+  }
+
+  .logo {
+    max-width: 313px;
+    display: block;
+
+    @media screen and (max-width: $breakpoint-sm){
+      max-width: 150px;
+    }
+    @media screen and (max-width: $breakpoint-lg){
+      max-width: 230px;
+    }
+  }
+
+  .footer__links {
+    font-weight: 500;
+    font-size: 1.875rem;
+  }
+}

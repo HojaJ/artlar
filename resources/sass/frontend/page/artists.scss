@@ -1,0 +1,53 @@
+.artist-list {
+  margin-top: 50px;
+  margin-bottom: 150px;
+
+  @media screen and  (min-width: $breakpoint-md){
+    padding-left: 120px;
+    margin-top: 100px;
+    margin-bottom: 300px;
+
+  }
+  li {
+    position: relative;
+    a {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #54BDE5;
+      margin: 0.6rem 0;
+
+      &:hover{
+        color:$font_color;
+        + img {
+          opacity: 1;
+          height: auto;
+        }
+      }
+
+      @media screen and  (min-width: $breakpoint-sm){
+        font-size: 2rem;
+      }
+      @media screen and  (min-width: $breakpoint-md){
+        font-size: 2.5rem;
+      }
+      @media screen and  (min-width: $breakpoint-lg){
+        font-size: 3rem;
+      }
+      @media screen and  (min-width: $breakpoint-xl){
+        font-size: 4.5rem;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    right: 0;
+    top:0;
+    max-width: 300px;
+    width: 30%;
+    transition: opacity 0.7s linear;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding:10px;
+  }
+}

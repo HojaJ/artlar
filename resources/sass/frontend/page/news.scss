@@ -1,0 +1,110 @@
+.news_block {
+  h3 {
+    font-size: 2.625rem;
+    line-height: 1;
+    @media screen and (max-width: $breakpoint-md){
+      margin-top: 30px;
+      font-size: 1.8rem;
+    }
+  }
+  time {
+    font-size: 2rem;
+    margin: 2rem 0;
+    display: block;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.2rem;
+    }
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+}
+.latest_news_head {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.latest_news {
+  border-top: 2px solid #FFFFFF;
+  padding: 1.5rem 0;
+  @media screen and (max-width: $breakpoint-md){
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  time{
+    font-size: 1.75rem;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.2rem;
+    }
+  }
+  img {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+.latest_news_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  @media screen and (max-width: $breakpoint-md){
+    margin-top: 30px;
+
+  }
+
+  h3 {
+    font-size: 2rem;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.4rem;
+    }
+  }
+  a {
+    font-size: 1.75rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.2rem;
+    }
+  }
+  p {
+    font-size: 1.75rem;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.2rem;
+    }
+  }
+}
+.in_the_block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+
+  h3 {
+    font-size: 3rem;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+  }
+  h5 {
+    font-size: 2.125rem;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    font-size: 1.75rem;
+    font-weight: 500;
+    @media screen and (max-width: $breakpoint-md){
+      font-size: 1.2rem;
+    }
+  }
+}
+.mb-6 {
+  margin-bottom: 6rem;
+}

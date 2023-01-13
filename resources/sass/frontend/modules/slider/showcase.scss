@@ -1,0 +1,108 @@
+.swiper.heroSlider {
+  width: 100%;
+  height: 650px;
+
+
+  @media screen and (max-width: $breakpoint-md){
+    height: 500px;
+  }
+
+  @media screen and (max-width: $breakpoint-sm){
+    height: 300px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 1.125rem;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+  }
+  .swiper-pagination-bullet {
+    font-family: 'Girona W05', sans-serif;
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #ffffff;
+    opacity: 1;
+    background: transparent;
+    height: 30px;
+    outline: none;
+    @media screen and (max-width: $breakpoint-sm){
+      font-size: 1.5rem;
+      height: 16px;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+    margin-top: -20px;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-left: 20px;
+      margin-top: -10px;
+    }
+    @media screen and (max-width: $breakpoint-sm){
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+  }
+  .swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+    left: 0;
+  }
+}
+
+.showcase{
+  &__img {
+    max-width: 870px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  &__info {
+    text-align: left;
+    position: absolute;
+    top: 75%;
+    right: 10%;
+
+    @media screen and (max-width: $breakpoint-xl){
+      right: 0;
+    }
+    @media screen and (max-width: $breakpoint-sm){
+      top: 69%;
+
+      h3, h4, span {
+        font-size: 1.6rem;
+      }
+    }
+    h4 {
+      font-style: italic;
+      color: #D8D8D8;
+      line-height: 1;
+      font-weight: 400;
+    }
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+
+
+

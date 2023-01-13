@@ -1,0 +1,22 @@
+// Variables, mixins, functions.
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+// Css files
+@import "vendor/libs";
+
+// generals
+@import "base/general";
+
+// BEM blocks
+@import "modules";
+// Pages
+@import "page/index";
+@import "page/artists";
+@import "page/artist";
+@import "page/work";
+@import "page/contact";
+@import "page/news";
+
+

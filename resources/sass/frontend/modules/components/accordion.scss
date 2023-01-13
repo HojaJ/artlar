@@ -1,0 +1,39 @@
+.accordion_wrapper{
+  margin-top: 50px;
+  margin-bottom: 300px;
+  .ui-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  .ui-accordion-content {
+    padding: 20px 0;
+    @media screen and (max-width: $breakpoint-sm) {
+      padding: 0;
+    }
+  }
+  h3 {
+    cursor: pointer;
+    padding: 35px 0;
+    @media screen and (max-width: $breakpoint-sm) {
+      padding: 20px 0;
+    }
+   &:nth-child(n+2){
+     border-top: 2px solid #DDDDDD;
+   }
+  }
+  p {
+    font-size: 1.75rem;
+    color: #DDDDDD;
+    text-align: justify;
+    width: 90%;
+    padding-left: 40px;
+    margin-left: auto;
+    border-left: 5px solid $font_color;
+
+    @media screen and (max-width: $breakpoint-md) {
+      width: 100%;
+      padding-left: 0;
+      border: none;
+    }
+  }
+}

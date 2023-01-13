@@ -1,0 +1,9 @@
+{
+    "Article": true,
+    "Tag": true,
+    "Comment": true,
+    "Artist": true,
+    "Painter": true,
+    "Country": true,
+    "Profession": true
+}
