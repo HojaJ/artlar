@@ -43,6 +43,10 @@ class Work extends BaseModel
         return $this->belongsTo('Modules\Material\Models\Material');
     }
 
+    public function artist() {
+        return $this->belongsTo('Modules\Artist\Models\Artist');
+    }
+
 
     /**
      * Create a new factory instance for the model.

@@ -29,12 +29,10 @@ return new class extends Migration
             $table->integer('movement_id')->unsigned()->nullable();
             $table->integer('rarity_id')->unsigned()->nullable();
 
+            $table->bigInteger('artist_id')->unsigned()->index()->nullable();
+
             $table->text('description')->nullable();
-
             $table->tinyInteger('status')->default(1);
-
-
-
 
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
@@ -42,6 +40,9 @@ return new class extends Migration
 
             $table->timestamps();
             $table->softDeletes();
+
+
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
         });
     }
 

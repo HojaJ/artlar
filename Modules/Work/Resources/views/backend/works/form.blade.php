@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="col-2">
+    <div class="col-4">
         <div class="form-group">
             <?php
             $field_name = 'year';
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="col-2">
+    <div class="col-4">
         <div class="form-group">
             <?php
             $field_name = 'price';
@@ -38,7 +38,24 @@
             {{ html()->number($field_name,null,0,null,0.01)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
-    <div class="col-2">
+</div>
+
+<div class="row mb-3">
+    <div class="col-6">
+        <div class="form-group">
+            <?php
+            $field_name = 'artist';
+            $field_lable = label_case($field_name);
+            $field_relation = "artist";
+            $field_placeholder = __("Select an option");
+            $required = "";
+            ?>
+            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+            {{ html()->select('artist_id', isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'')->placeholder($field_placeholder)->class('form-control select2-artist')->attributes(["$required"]) }}
+        </div>
+    </div>
+
+    <div class="col-6">
         <div class="form-group">
             <?php
             $field_name = 'size';
@@ -160,6 +177,28 @@
             $(document).on('select2:open', () => {
                 document.querySelector('.select2-search__field').focus();
                 document.querySelector('.select2-container--open .select2-search__field').focus();
+            });
+
+            $('.select2-artist').select2({
+                theme: "bootstrap",
+                placeholder: '@lang("Select an option")',
+                minimumInputLength: 2,
+                allowClear: true,
+                ajax: {
+                    url: '{{route("backend.artists.index_list")}}',
+                    dataType: 'json',
+                    data: function(params) {
+                        return {
+                            q: $.trim(params.term)
+                        };
+                    },
+                    processResults: function(data) {
+                        return {
+                            results: data
+                        };
+                    },
+                    cache: true
+                }
             });
 
             $('.select2-material').select2({
