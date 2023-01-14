@@ -1,0 +1,24 @@
+{
+    "name": "Artlar/material",
+    "description": "",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "Artlar",
+            "email": "artlar.technes@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Material\\": ""
+        }
+    }
+}

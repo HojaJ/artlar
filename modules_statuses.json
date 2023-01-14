@@ -5,5 +5,11 @@
     "Artist": true,
     "Painter": true,
     "Country": true,
-    "Profession": true
+    "Profession": true,
+    "Rarity": true,
+    "Medium": true,
+    "Movement": true,
+    "Material": true,
+    "Size": true,
+    "Work": true
 }

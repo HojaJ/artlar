@@ -1,0 +1,13 @@
+{
+    "name": "Medium",
+    "alias": "medium",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Medium\\Providers\\MediumServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

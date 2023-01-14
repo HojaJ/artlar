@@ -1,0 +1,13 @@
+{
+    "name": "Rarity",
+    "alias": "rarity",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Rarity\\Providers\\RarityServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

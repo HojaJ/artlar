@@ -55,10 +55,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nasirkhan',
+        'vendor' => 'Artlar',
         'author' => [
-            'name'  => 'Nasir Khan',
-            'email' => 'nasir8891@gmail.com',
+            'name'  => 'Artlar',
+            'email' => 'artlar.technes@gmail.com',
         ],
     ],
 ];

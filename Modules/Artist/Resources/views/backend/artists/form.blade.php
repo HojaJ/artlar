@@ -229,7 +229,8 @@
 
         // set file link
         function fmSetLink($url) {
-            document.getElementById('image').value = $url;
+            let new_url = new URL($url);
+            document.getElementById('image').value = new_url.pathname;
         }
     </script>
 @endpush
