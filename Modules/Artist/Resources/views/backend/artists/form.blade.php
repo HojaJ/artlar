@@ -37,11 +37,37 @@
             {{ html()->date('dob')->class('form-control datetimepicker-input datetime')->attributes(["$required"]) }}
         </div>
     </div>
-
 </div>
 
 <div class="row mb-3">
-    <div class="col-12">
+    <div class="col-3  align-self-center">
+        <div class="form-group">
+            <?php
+            $field_name = 'dead';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "";
+            ?>
+            <div class="form-check">
+                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+
+                {{ html()->checkbox($field_name)->class('form-check-input')->attributes(["$required"]) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            <?php
+            $field_name = 'date_of_death';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "";
+            ?>
+            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+            {{ html()->date('dod')->class('form-control datetimepicker-input datetime')->attributes(["$required"]) }}
+        </div>
+    </div>
+    <div class="col-6">
         <div class="form-group">
             <?php
             $field_name = 'image';
@@ -57,6 +83,12 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12">
+
     </div>
 </div>
 

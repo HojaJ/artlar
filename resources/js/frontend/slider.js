@@ -1,6 +1,6 @@
-import Swiper, { Navigation, Pagination,Mousewheel, Keyboard, Zoom, Grid,A11y, FreeMode } from 'swiper';
+import Swiper, { Navigation, Parallax, Pagination,Mousewheel, Keyboard, Zoom, Grid,A11y, FreeMode, Scrollbar } from 'swiper';
 import $ from 'jquery';
-Swiper.use([Navigation, Pagination, Mousewheel,Keyboard, Zoom, Grid,A11y, FreeMode]);
+Swiper.use([Navigation,Parallax, Pagination, Mousewheel,Keyboard, Zoom, Grid,A11y, FreeMode, Scrollbar]);
 
 $(function () {
     let heroSlider = new Swiper(".heroSlider", {
@@ -19,9 +19,10 @@ $(function () {
     });
 
     let artistSlider = new Swiper(".slideSlider", {
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            draggable: true,
         },
         slidesPerView: 2,
         spaceBetween: 30,
@@ -36,12 +37,13 @@ $(function () {
             }
         }
     });
+
     let newSlider = new Swiper(".newSlider", {
         slidesPerView: 2,
         spaceBetween: 20,
         grabCursor: true,
-        centeredSlides: true,
-        loop: true,
+        speed: 600,
+        parallax: true,
         loopAdditionalSlides: 30,
 
         breakpoints: {
@@ -52,6 +54,15 @@ $(function () {
                 slidesPerView: 4,
             }
         }
+    });
+
+    let newsSlider = new Swiper(".newsSlider", {
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            draggable: true,
+        },
+        grabCursor: false,
     });
 
 })

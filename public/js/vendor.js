@@ -1,4 +1,4 @@
-(self["webpackChunkgulp_scss_starter"] = self["webpackChunkgulp_scss_starter"] || []).push([["vendor"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["vendor"],{
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.bundle.js":
 /*!************************************************************!*\

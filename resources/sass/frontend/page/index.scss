@@ -1,3 +1,53 @@
+.news {
+    margin-top: 150px;
+    background-image: url("../img/news_front.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+
+    &__cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        @media screen and (max-width: $breakpoint-xl){
+            bottom:20px;
+        }
+    }
+
+    .swiper-slide {
+        height: 100%;
+    }
+
+    .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+        bottom: 20%;
+        z-index: 999;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 12px;
+        background: transparent;
+        border: 1px solid $font_color;
+        cursor: pointer;
+        @media screen and (max-width: $breakpoint-xl){
+            width: 100%;
+            left: 0;
+            transform: none;
+        }
+        @media screen and (max-width: $breakpoint-md){
+            //bottom: 50px;
+        }
+    }
+    .swiper-scrollbar-drag {
+        background-color: $font_color;
+    }
+}
+
 .auction {
   margin-top: 150px;
   background-image: url("../img/auction.jpg");
@@ -55,3 +105,5 @@
     }
   }
 }
+
+

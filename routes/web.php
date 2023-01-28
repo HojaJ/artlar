@@ -42,6 +42,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('terms', 'FrontendController@terms')->name('terms');
     Route::get('faq', 'FrontendController@faq')->name('faq');
     Route::get('wishlist', 'FrontendController@wishlist')->name('wishlist');
+    Route::get('arrivals', 'FrontendController@arrivals')->name('arrivals');
 
 
     Route::get('home', 'FrontendController@index')->name('home');

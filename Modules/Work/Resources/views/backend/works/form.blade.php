@@ -147,6 +147,55 @@
     </div>
 </div>
 
+<div class="row mb-2">
+    <div class="col-4">
+        <div class="form-group">
+            <?php
+            $field_name = 'signature';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "";
+            ?>
+                <div class="form-check">
+            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+
+            {{ html()->checkbox($field_name)->class('form-check-input')->attributes(["$required"]) }}
+                </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <?php
+            $field_name = 'certificate_of_auth';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "";
+            ?>
+            <div class="form-check">
+                {{ html()->label('Certificate of authenticity', $field_name) }} {!! fielf_required($required) !!}
+
+                {{ html()->checkbox($field_name)->class('form-check-input')->attributes(["$required"]) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <?php
+            $field_name = 'frame';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "";
+            ?>
+            <div class="form-check">
+                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+
+                {{ html()->checkbox($field_name)->class('form-check-input')->attributes(["$required"]) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="row mb-3">
     <div class="col-12">
         <div class="form-group">

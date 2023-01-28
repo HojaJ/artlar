@@ -23,6 +23,10 @@ return new class extends Migration
             $table->float('price')->nullable();
             $table->string('size')->nullable();
 
+            $table->boolean('signature')->default(false);
+            $table->boolean('certificate_of_auth')->default(false);
+            $table->boolean('frame')->default(false);
+
 
             $table->integer('material_id')->unsigned()->nullable();
             $table->integer('medium_id')->unsigned()->nullable();

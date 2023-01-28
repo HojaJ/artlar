@@ -8,9 +8,6 @@
             <div class="col-md-6">
                 <img src="{{ asset('img/work2.png') }}" class="img-fluid" alt="Work">
                 <a href="#" class="d-block my-5 text-center view_in">View in room</a>
-                <button type="button" class="button button-cv" data-bs-toggle="modal" data-bs-target="#rarityModal">
-                    Rarity
-                </button>
             </div>
             <div class="col-md-6 ps-md-5">
                 <div class="work-info">
@@ -23,7 +20,11 @@
                         <li>61 × 48 in | 154.9 × 121.9 cm</li>
                         <li>Oil canvas</li>
                         <li>Cubism</li>
-                        <li class="text-decoration-underline">Unique work</li>
+                        <li class="text-decoration-underline">
+                            <a data-bs-toggle="modal" data-bs-target="#rarityModal">
+                                Unique work
+                            </a>
+                        </li>
                     </ul>
                     <div class="work-info__price">
                         <span>US$5,500</span>

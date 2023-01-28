@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname')->nullable();
             $table->date('dob')->nullable();
+            $table->boolean('dead')->default(false);
+            $table->date('dod')->nullable();
             $table->string('image')->nullable();
 
             $table->string('slug')->nullable();

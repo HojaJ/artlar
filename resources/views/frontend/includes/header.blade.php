@@ -13,18 +13,20 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav  w-100 justify-content-around mb-2 mb-lg-0">
                     <li class="nav-item">
-{{--                        <a class="nav-link" href="#">Artists</a>--}}
+                        <a class="nav-link" href="{{ route('frontend.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('frontend.artists') }}">Artists</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('frontend.works') }}">Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
+                        <a class="nav-link" href="{{ route('frontend.arrivals') }}">New Arrivals</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Auctions</a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="#">Auctions</a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('frontend.news') }}">News</a>
                     </li>

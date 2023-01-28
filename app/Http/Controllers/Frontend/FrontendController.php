@@ -84,6 +84,13 @@ class FrontendController extends Controller
         return view('frontend.wishlist', compact('body_class'));
     }
 
+    public function arrivals()
+    {
+        $body_class = '';
+
+        return view('frontend.arrivals', compact('body_class'));
+    }
+
 
     /**
      * Privacy Policy Page.

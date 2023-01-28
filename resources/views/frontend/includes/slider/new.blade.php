@@ -7,5 +7,7 @@
         @include('frontend.includes.slider.new_single')
         @include('frontend.includes.slider.new_single')
         @include('frontend.includes.slider.new_single')
+        @include('frontend.includes.slider.new_single')
+        @include('frontend.includes.slider.new_single')
     </div>
 </div>

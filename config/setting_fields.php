@@ -23,7 +23,7 @@ return [
                 'label' => 'Footer Text', // you know what label it is
                 'rules' => 'required|min:2', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => '<a href="https://github.com/nasirkhan/laravel-starter/">Built with ♥ from Bangladesh</a>', // default value if you want
+                'value' => '', // default value if you want
             ],
             [
                 'type'  => 'checkbox', // input fields type
@@ -105,6 +105,15 @@ return [
                 'class' => '', // any class for input
                 'value' => '#', // default value if you want
             ],
+            [
+                'type'  => 'text', // input fields type
+                'data'  => 'string', // data type, string, int, boolean
+                'name'  => 'telegram_url', // unique name for field
+                'label' => 'Telegram Channel URL', // you know what label it is
+                'rules' => 'required|nullable|max:191', // validation rule of laravel
+                'class' => '', // any class for input
+                'value' => '#', // default value if you want
+            ],
         ],
 
     ],
@@ -139,7 +148,7 @@ return [
                 'label' => 'Meta Keyword', // you know what label it is
                 'rules' => 'required', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => 'Web Application, Laravel,Laravel starter,Bootstrap,Admin,Template,Open,Source, nasir khan, nasirkhan', // default value if you want
+                'value' => 'Web Application, Laravel,Laravel starter,Bootstrap,Admin,Template,Open,Source', // default value if you want
             ],
             [
                 'type'  => 'text', // input fields type
@@ -166,7 +175,7 @@ return [
                 'label' => 'Meta Twitter Site Account', // you know what label it is
                 'rules' => '', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => '@nasir8891', // default value if you want
+                'value' => '', // default value if you want
             ],
             [
                 'type'  => 'text', // input fields type
@@ -175,7 +184,7 @@ return [
                 'label' => 'Meta Twitter Creator Account', // you know what label it is
                 'rules' => '', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => '@nasir8891', // default value if you want
+                'value' => '', // default value if you want
             ],
         ],
     ],

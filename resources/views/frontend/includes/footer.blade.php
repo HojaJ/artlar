@@ -23,7 +23,7 @@
                     <ul class="footer__links ms-md-5">
                         <li><a href="{{ route('frontend.faq') }}">FAQ</a></li>
                         <li><a href="{{ route('frontend.terms')}}">Terms & Policy</a></li>
-                        <li><a href="{{ route('frontend.wishlist')}}">Wishlist</a></li>
+{{--                        <li><a href="{{ route('frontend.wishlist')}}">Wishlist</a></li>--}}
                     </ul>
                 </div>
 
