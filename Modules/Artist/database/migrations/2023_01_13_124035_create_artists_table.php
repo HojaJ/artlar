@@ -49,6 +49,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('works');
         Schema::dropIfExists('artists');
     }
 };
