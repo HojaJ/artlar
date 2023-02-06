@@ -4,6 +4,9 @@ namespace Modules\Work\Http\Controllers\Backend;
 
 use App\Authorizable;
 use App\Http\Controllers\Backend\BackendBaseController;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class WorksController extends BackendBaseController
 {
@@ -26,5 +29,4 @@ class WorksController extends BackendBaseController
         // module model name, path
         $this->module_model = "Modules\Work\Models\Work";
     }
-
 }

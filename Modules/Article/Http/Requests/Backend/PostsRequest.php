@@ -26,14 +26,14 @@ class PostsRequest extends FormRequest
         return [
             'name'              => 'required|max:191',
             'slug'              => 'nullable|max:191',
-            'intro'             => 'required',
+//            'intro'             => 'required',
             'content'           => 'required',
-            'type'              => 'required|max:191',
-            'category_id'       => 'required|numeric',
-            'created_by_alias'  => 'nullable|max:191',
+//            'type'              => 'required|max:191',
+//            'category_id'       => 'required|numeric',
+//            'created_by_alias'  => 'nullable|max:191',
             'featured_image'    => 'required|max:191',
-            'is_featured'       => 'required',
-            'order'             => 'nullable|numeric',
+//            'is_featured'       => 'required',
+//            'order'             => 'nullable|numeric',
             'status'            => 'required',
         ];
     }

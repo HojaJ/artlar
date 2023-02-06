@@ -11,8 +11,8 @@ trait HasHashedMediaTrait
         InteractsWithMedia::addMedia as parentAddMedia;
     }
 
-    public function addMedia($file): FileAdder
-    {
-        return $this->parentAddMedia($file)->usingFileName($file->hashName());
-    }
+//    public function addMedia($file): FileAdder
+//    {
+//        return $this->parentAddMedia($file)->usingFileName($file->hashName());
+//    }
 }

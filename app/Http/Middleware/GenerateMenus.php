@@ -30,19 +30,6 @@ class GenerateMenus
                 'class' => 'nav-link',
             ]);
 
-            // Notifications
-            $menu->add('<i class="nav-icon fas fa-bell"></i> Notifications', [
-                'route' => 'backend.notifications.index',
-                'class' => 'nav-item',
-            ])
-            ->data([
-                'order'         => 99,
-                'activematches' => 'admin/notifications*',
-                'permission'    => [],
-            ])
-            ->link->attr([
-                'class' => 'nav-link',
-            ]);
 
             // Separator: Access Management
             $menu->add('Management', [
@@ -53,13 +40,27 @@ class GenerateMenus
                 'permission'    => ['edit_settings', 'view_backups', 'view_users', 'view_roles', 'view_logs'],
             ]);
 
+            // Notifications
+            $menu->add('<i class="nav-icon fas fa-bell"></i> Notifications', [
+                'route' => 'backend.notifications.index',
+                'class' => 'nav-item',
+            ])
+                ->data([
+                    'order'         => 102,
+                    'activematches' => 'admin/notifications*',
+                    'permission'    => [],
+                ])
+                ->link->attr([
+                    'class' => 'nav-link',
+                ]);
+
             // Settings
             $menu->add('<i class="nav-icon fas fa-cogs"></i> Settings', [
                 'route' => 'backend.settings',
                 'class' => 'nav-item',
             ])
             ->data([
-                'order'         => 102,
+                'order'         => 103,
                 'activematches' => 'admin/settings*',
                 'permission'    => ['edit_settings'],
             ])

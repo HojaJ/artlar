@@ -16,6 +16,7 @@ class Work extends BaseModel
     use HasFactory;
     use SoftDeletes;
 
+
     protected $table = 'works';
 
     public function getActivitylogOptions(): LogOptions
