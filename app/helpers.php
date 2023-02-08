@@ -33,17 +33,18 @@ function store_image($folder_name, $image) {
     $path = $exist_or_new.'/';
     $image->move($path, $filename);
     $fullpath = $path.$filename;
-    if(file_exists($fullpath)) {
-        $img = Image::make($fullpath);
-        $img->encode('jpg', 60)->save($fullpath);
-        if(file_exists($fullpath)) {
-            $webp = Image::make($fullpath)->encode('webp');
+
+    // if(file_exists($fullpath)) {
+        // $img = Image::make($fullpath);
+        // $img->encode('jpg', 60)->save($fullpath);
+        // if(file_exists($fullpath)) {
+            // $webp = Image::make($fullpath)->encode('webp');
 //            $webp = $webp->widen(, function ($constraint){
 //                $constraint->upsize();
 //            });
-            $webp_img_name = $webp->save($exist_or_new.'/'.$name.'.webp');
-        }
-    }
+            // $webp_img_name = $webp->save($exist_or_new.'/'.$name.'.webp');
+        // }
+    // }
     return $fullpath;
 }
 
