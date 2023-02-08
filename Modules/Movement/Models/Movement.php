@@ -22,4 +22,8 @@ class Movement extends BaseModel
     {
         return \Modules\Movement\database\factories\MovementFactory::new();
     }
+
+    public function work() {
+        return $this->belongsToMany('Modules\Work\Models\Work');
+    }
 }

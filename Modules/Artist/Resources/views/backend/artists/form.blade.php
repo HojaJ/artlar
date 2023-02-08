@@ -1,5 +1,5 @@
 <div class="row mb-3">
-    <div class="col-5">
+    <div class="col-6">
         <div class="form-group">
             <?php
             $field_name = 'name';
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="col">
+    <div class="col-6">
         <div class="form-group">
             <?php
             $field_name = 'surname';
@@ -24,7 +24,9 @@
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
+</div>
 
+<div class="row mb-3">
     <div class="col-4">
         <div class="form-group">
             <?php
@@ -37,10 +39,7 @@
             {{ html()->date('dob')->class('form-control datetimepicker-input datetime')->attributes(["$required"]) }}
         </div>
     </div>
-</div>
-
-<div class="row mb-3">
-    <div class="col-3  align-self-center">
+    <div class="col-4  align-self-end justify-content-end">
         <div class="form-group">
             <?php
             $field_name = 'dead';
@@ -55,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-4">
         <div class="form-group">
             <?php
             $field_name = 'date_of_death';
@@ -67,28 +66,26 @@
             {{ html()->date('dod')->class('form-control datetimepicker-input datetime')->attributes(["$required"]) }}
         </div>
     </div>
-    <div class="col-6">
-        <div class="form-group">
-            <?php
-            $field_name = 'image';
-            $field_lable = label_case($field_name);
-            $field_placeholder = $field_lable;
-            $required = "required";
-            ?>
-            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-            <div class="input-group mb-3">
-                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
-                <div class="input-group-append">
-                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="row mb-3">
     <div class="col-12">
-
+            <div class="form-group">
+                <?php
+                $field_name = 'image';
+                $field_lable = label_case($field_name);
+                $field_placeholder = $field_lable;
+                $required = "";
+                ?>
+                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+                <div class="input-group mb-3">
+                    {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}
+                    {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image',]) }}
+                    {{--                <div class="input-group-append">--}}
+                    {{--                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
+                    {{--                </div>--}}
+                </div>
+            </div>
     </div>
 </div>
 

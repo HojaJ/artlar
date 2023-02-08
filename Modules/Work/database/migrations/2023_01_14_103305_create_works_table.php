@@ -21,16 +21,18 @@ return new class extends Migration
             $table->smallInteger('year')->nullable();
             $table->string('image')->nullable();
             $table->float('price')->nullable();
-            $table->string('size')->nullable();
+            $table->smallInteger('size_length')->nullable();
+            $table->smallInteger('size_height')->nullable();
 
             $table->boolean('signature')->default(false);
             $table->boolean('certificate_of_auth')->default(false);
             $table->boolean('frame')->default(false);
 
 
-            $table->integer('material_id')->unsigned()->nullable();
+//            $table->integer('material_id')->unsigned()->nullable();
+
             $table->integer('medium_id')->unsigned()->nullable();
-            $table->integer('movement_id')->unsigned()->nullable();
+//            $table->integer('movement_id')->unsigned()->nullable();
             $table->integer('rarity_id')->unsigned()->nullable();
 
             $table->bigInteger('artist_id')->unsigned()->index()->nullable();

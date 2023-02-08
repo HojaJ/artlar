@@ -55,16 +55,30 @@
         </div>
     </div>
 
-    <div class="col-6">
-        <div class="form-group">
-            <?php
-            $field_name = 'size';
-            $field_lable = label_case($field_name);
-            $field_placeholder = $field_lable;
-            $required = "";
-            ?>
-            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-            {{ html()->text($field_name)->class('form-control')->attributes(["$required"]) }}
+    <div class="col-6 row">
+        <div class="col-6">
+            <div class="form-group">
+                <?php
+                $field_name = 'size_length';
+                $field_lable = label_case($field_name);
+                $field_placeholder = $field_lable;
+                $required = "";
+                ?>
+                {{ html()->label('Length (sm)', $field_name) }} {!! fielf_required($required) !!}
+                {{ html()->number($field_name)->class('form-control')->attributes(["$required"]) }}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <?php
+                $field_name = 'size_height';
+                $field_lable = label_case($field_name);
+                $field_placeholder = $field_lable;
+                $required = "";
+                ?>
+                {{ html()->label('Height (sm)', $field_name) }} {!! fielf_required($required) !!}
+                {{ html()->number($field_name)->class('form-control')->attributes(["$required"]) }}
+            </div>
         </div>
     </div>
 </div>
@@ -76,16 +90,15 @@
             $field_name = 'image';
             $field_lable = label_case($field_name);
             $field_placeholder = $field_lable;
-            $required = "required";
+            $required = "";
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
             <div class="input-group mb-3">
-
-{{--                {{ html()->file($field_name)->class('form-control') }}--}}
-                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
-                <div class="input-group-append">
-                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
-                </div>
+                {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}
+                {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image']) }}
+                {{--                <div class="input-group-append">--}}
+                {{--                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
+                {{--                </div>--}}
             </div>
         </div>
     </div>
@@ -95,16 +108,40 @@
     <div class="col-6">
         <div class="form-group">
             <?php
-            $field_name = 'material';
+            $field_name = 'material_list[]';
             $field_lable = label_case($field_name);
             $field_relation = "material";
             $field_placeholder = __("Select an option");
             $required = "";
             ?>
-            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-            {{ html()->select('material_id', isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'')->placeholder($field_placeholder)->class('form-control select2-material')->attributes(["$required"]) }}
+            {{ html()->label("Material", $field_name) }} {!! fielf_required($required) !!}
+            {{ html()->multiselect($field_name,
+                isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'',
+                isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('id')->toArray():''
+                )->class('form-control select2-material')->attributes(["$required"]) }}
+        </div>
+
+    </div>
+
+    <div class="col-6">
+        <div class="form-group">
+            <?php
+            $field_name = 'movement_list[]';
+            $field_lable = label_case($field_name);
+            $field_relation = "movement";
+            $field_placeholder = __("Select an option");
+            $required = "";
+            ?>
+            {{ html()->label("Movement", $field_name) }} {!! fielf_required($required) !!}
+            {{ html()->multiselect($field_name,
+                isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'',
+                isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('id')->toArray():''
+                )->class('form-control select2-movement')->attributes(["$required"]) }}
         </div>
     </div>
+</div>
+
+<div class="row mb-3">
     <div class="col-6">
         <div class="form-group">
             <?php
@@ -116,22 +153,6 @@
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
             {{ html()->select('medium_id', isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'')->placeholder($field_placeholder)->class('form-control select2-medium')->attributes(["$required"]) }}
-        </div>
-    </div>
-</div>
-
-<div class="row mb-3">
-    <div class="col-6">
-        <div class="form-group">
-            <?php
-            $field_name = 'movement';
-            $field_lable = label_case($field_name);
-            $field_relation = "movement";
-            $field_placeholder = __("Select an option");
-            $required = "";
-            ?>
-            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-            {{ html()->select('movement_id', isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'')->placeholder($field_placeholder)->class('form-control select2-movement')->attributes(["$required"]) }}
         </div>
     </div>
     <div class="col-6">
@@ -255,6 +276,7 @@
             $('.select2-material').select2({
                 theme: "bootstrap",
                 placeholder: '@lang("Select an option")',
+
                 minimumInputLength: 2,
                 allowClear: true,
                 ajax: {

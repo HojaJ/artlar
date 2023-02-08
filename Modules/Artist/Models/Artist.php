@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Artist extends BaseModel
 {
@@ -15,6 +17,7 @@ class Artist extends BaseModel
     use LogsActivity;
     use HasFactory;
     use SoftDeletes;
+    use HasSlug;
 
     protected $table = 'artists';
 
@@ -45,5 +48,12 @@ class Artist extends BaseModel
     protected static function newFactory()
     {
         return \Modules\Artist\database\factories\ArtistFactory::new();
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 }

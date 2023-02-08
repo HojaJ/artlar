@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Work extends BaseModel
 {
@@ -15,6 +17,7 @@ class Work extends BaseModel
     use LogsActivity;
     use HasFactory;
     use SoftDeletes;
+    use HasSlug;
 
 
     protected $table = 'works';
@@ -33,7 +36,7 @@ class Work extends BaseModel
     }
 
     public function movement() {
-        return $this->belongsTo('Modules\Movement\Models\Movement');
+        return $this->belongsToMany('Modules\Movement\Models\Movement');
     }
 
     public function medium() {
@@ -41,7 +44,7 @@ class Work extends BaseModel
     }
 
     public function material() {
-        return $this->belongsTo('Modules\Material\Models\Material');
+        return $this->belongsToMany('Modules\Material\Models\Material');
     }
 
     public function artist() {
@@ -57,5 +60,12 @@ class Work extends BaseModel
     protected static function newFactory()
     {
         return \Modules\Work\database\factories\WorkFactory::new();
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 }

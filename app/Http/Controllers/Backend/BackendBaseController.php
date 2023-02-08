@@ -284,12 +284,16 @@ class BackendBaseController extends Controller
         $module_icon = $this->module_icon;
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
-
         $module_action = 'destroy';
-
-        $$module_name_singular = $module_model::findOrFail($id);
-
-        $$module_name_singular->delete();
+        try{
+            $$module_name_singular = $module_model::findOrFail($id);
+            if($$module_name_singular->image){
+                remove_image($$module_name_singular->image);
+            }
+            $$module_name_singular->delete();
+        }catch (\Exception $e){
+            dd($e);
+        }
 
         flash('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Deleted Successfully!')->success()->important();
 

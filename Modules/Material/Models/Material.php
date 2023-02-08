@@ -22,4 +22,8 @@ class Material extends BaseModel
     {
         return \Modules\Material\database\factories\MaterialFactory::new();
     }
+
+    public function work() {
+        return $this->belongsToMany('Modules\Work\Models\Work');
+    }
 }
