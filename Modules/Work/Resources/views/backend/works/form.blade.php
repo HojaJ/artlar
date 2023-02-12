@@ -59,24 +59,24 @@
         <div class="col-6">
             <div class="form-group">
                 <?php
-                $field_name = 'size_length';
-                $field_lable = label_case($field_name);
-                $field_placeholder = $field_lable;
-                $required = "";
-                ?>
-                {{ html()->label('Length (sm)', $field_name) }} {!! fielf_required($required) !!}
-                {{ html()->number($field_name)->class('form-control')->attributes(["$required"]) }}
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <?php
                 $field_name = 'size_height';
                 $field_lable = label_case($field_name);
                 $field_placeholder = $field_lable;
                 $required = "";
                 ?>
                 {{ html()->label('Height (sm)', $field_name) }} {!! fielf_required($required) !!}
+                {{ html()->number($field_name)->class('form-control')->attributes(["$required"]) }}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <?php
+                $field_name = 'size_length';
+                $field_lable = label_case($field_name);
+                $field_placeholder = $field_lable;
+                $required = "";
+                ?>
+                {{ html()->label('Length (sm)', $field_name) }} {!! fielf_required($required) !!}
                 {{ html()->number($field_name)->class('form-control')->attributes(["$required"]) }}
             </div>
         </div>
@@ -90,17 +90,33 @@
             $field_name = 'image';
             $field_lable = label_case($field_name);
             $field_placeholder = $field_lable;
-            $required = "";
+            $required = "required";
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
             <div class="input-group mb-3">
-                {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}
-                {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image']) }}
-                {{--                <div class="input-group-append">--}}
-                {{--                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
-                {{--                </div>--}}
+                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
+                </div>
             </div>
         </div>
+
+{{--        <div class="form-group">--}}
+{{--            <?php--}}
+{{--            $field_name = 'image';--}}
+{{--            $field_lable = label_case($field_name);--}}
+{{--            $field_placeholder = $field_lable;--}}
+{{--            $required = "";--}}
+{{--            ?>--}}
+{{--            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}--}}
+{{--            <div class="input-group mb-3">--}}
+{{--                {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}--}}
+{{--                {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image']) }}--}}
+{{--                                <div class="input-group-append">--}}
+{{--                                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
+{{--                                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </div>
 
@@ -241,6 +257,7 @@
 @push('after-styles')
     <!-- File Manager -->
     <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
+
 @endpush
 
 @push ('after-scripts')

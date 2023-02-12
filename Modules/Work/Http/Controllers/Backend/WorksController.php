@@ -49,9 +49,9 @@ class WorksController extends BackendBaseController
         $module_action = 'Store';
         try{
             $data = $request->all();
-            if($request->image){
-                $data['image'] = work_image($request->image);
-            }
+//            if($request->image){
+//                $data['image'] = work_image($request->image);
+//            }
             $$module_name_singular = $module_model::create($data);
             $$module_name_singular->movement()->attach($request->input('movement_list'));
             $$module_name_singular->material()->attach($request->input('material_list'));
@@ -87,12 +87,12 @@ class WorksController extends BackendBaseController
             $$module_name_singular = $module_model::findOrFail($id);
             $data = $request->all();
 
-            if($request->image){
-                $data['image'] = work_image($request->image);
-                if($$module_name_singular->image){
-                    remove_image($$module_name_singular->image);
-                }
-            }
+//            if($request->image){
+//                $data['image'] = work_image($request->image);
+//                if($$module_name_singular->image){
+//                    remove_image($$module_name_singular->image);
+//                }
+//            }
             if ($request->input('material_list') == null) {
                 $material_list = [];
             } else {
