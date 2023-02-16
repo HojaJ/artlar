@@ -3,7 +3,7 @@
         @foreach($artists as $artist)
             <div class="swiper-slide">
                 <div class="slideсard__img">
-                    <img class="showcase__img" src="{{asset($artist->image)}}" alt="{{ $artist->fullname }}">
+                    <img class="showcase__img" src="{{asset($artist->image_path)}}" alt="{{ $artist->fullname }}">
                 </div>
                 <div class="slideсard__info">
                     <h3>{{ $artist->fullname }}</h3>

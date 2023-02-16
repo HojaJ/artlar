@@ -20,7 +20,7 @@ class Artist extends BaseModel
     use SoftDeletes;
     use HasSlug;
 
-    protected $appends = ['full_name'];
+    protected $appends = ['full_name','image_path'];
 
     protected $table = 'artists';
 
@@ -36,6 +36,12 @@ class Artist extends BaseModel
     public function getFullNameAttribute()
     {
         return ucfirst($this->name) . ' ' . ucfirst($this->surname);
+    }
+
+    public function getImagePathAttribute()
+    {
+        $url =  explode('/',$this->image);
+        return $url[2] . '/' . $url[3] .'/' . pathinfo($url[4],PATHINFO_FILENAME) . '.jpg';
     }
 
     public function country() {
