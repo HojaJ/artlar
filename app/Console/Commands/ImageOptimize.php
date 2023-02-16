@@ -47,7 +47,6 @@ class ImageOptimize extends Command
                 }
             }
         }
-        $this->info('Hello World!');
-        return true;
+        echo 'Done!';
     }
 }

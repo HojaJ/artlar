@@ -125,9 +125,9 @@ class ArtistsController extends BackendBaseController
         $module_action = 'Store';
         try{
             $data = $request->all();
-            if($request->image){
-                $data['image'] = artist_image($request->image);
-            }
+//            if($request->image){
+//                $data['image'] = artist_image($request->image);
+//            }
             $$module_name_singular = $module_model::create($data);
         }catch (\Exception $e){
             dd($e);
@@ -160,12 +160,12 @@ class ArtistsController extends BackendBaseController
         try{
             $$module_name_singular = $module_model::findOrFail($id);
             $data = $request->all();
-            if($request->image){
-                $data['image'] = artist_image($request->image);
-                if($$module_name_singular->image){
-                    remove_image($$module_name_singular->image);
-                }
-            }
+//            if($request->image){
+//                $data['image'] = artist_image($request->image);
+//                if($$module_name_singular->image){
+//                    remove_image($$module_name_singular->image);
+//                }
+//            }
             $$module_name_singular->update($data);
         }catch (\Exception $e){
             dd($e);

@@ -288,9 +288,9 @@ class BackendBaseController extends Controller
         $module_action = 'destroy';
         try{
             $$module_name_singular = $module_model::findOrFail($id);
-            if($$module_name_singular->image){
-                remove_image($$module_name_singular->image);
-            }
+//            if($$module_name_singular->image){
+//                remove_image($$module_name_singular->image);
+//            }
             $$module_name_singular->delete();
         }catch (\Exception $e){
             dd($e);

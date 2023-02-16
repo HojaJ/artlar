@@ -70,22 +70,38 @@
 
 <div class="row mb-3">
     <div class="col-12">
-            <div class="form-group">
-                <?php
-                $field_name = 'image';
-                $field_lable = label_case($field_name);
-                $field_placeholder = $field_lable;
-                $required = "";
-                ?>
-                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-                <div class="input-group mb-3">
-                    {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}
-                    {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image',]) }}
-                    {{--                <div class="input-group-append">--}}
-                    {{--                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
-                    {{--                </div>--}}
+        <div class="form-group">
+            <?php
+            $field_name = 'image';
+            $field_lable = label_case($field_name);
+            $field_placeholder = $field_lable;
+            $required = "required";
+            ?>
+            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+            <div class="input-group mb-3">
+                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
                 </div>
             </div>
+        </div>
+
+        {{--        <div class="form-group">--}}
+        {{--            <?php--}}
+        {{--            $field_name = 'image';--}}
+        {{--            $field_lable = label_case($field_name);--}}
+        {{--            $field_placeholder = $field_lable;--}}
+        {{--            $required = "";--}}
+        {{--            ?>--}}
+        {{--            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}--}}
+        {{--            <div class="input-group mb-3">--}}
+        {{--                {{ html()->text('')->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image','value' => isset($$module_name_singular)?$$module_name_singular->image:'']) }}--}}
+        {{--                {{ html()->file($field_name)->class('form-control')->attributes(["$required", 'aria-label'=>'Image']) }}--}}
+        {{--                                <div class="input-group-append">--}}
+        {{--                                    <button class="btn btn-info" type="button" id="button-image"><i class="fas fa-folder-open"></i> @lang('Browse')</button>--}}
+        {{--                                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
     </div>
 </div>
 
