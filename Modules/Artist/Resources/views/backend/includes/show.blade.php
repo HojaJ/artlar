@@ -41,7 +41,7 @@
         <td>
             @foreach($$module_name_singular->works as $work)
                 @php
-                    $img_path = asset($work->image);
+                    $img_path = asset($work->image_path);
                 @endphp
                 <figure class="figure">
                     <a href="{{$img_path}}" data-lightbox="image-set" data-title="Name: {{$work->name}}">

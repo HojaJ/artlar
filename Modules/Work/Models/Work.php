@@ -19,6 +19,8 @@ class Work extends BaseModel
     use SoftDeletes;
     use HasSlug;
 
+    protected $appends = ['image_path'];
+
 
     protected $table = 'works';
 
@@ -29,6 +31,12 @@ class Work extends BaseModel
             ->logOnlyDirty()
             ->dontSubmitEmptyLogs()
             ->useLogName($this->table);
+    }
+
+    public function getImagePathAttribute()
+    {
+        $url =  explode('/',$this->image);
+        return $url[2] . '/' . $url[3] .'/' . pathinfo($url[4],PATHINFO_FILENAME) . '.jpg';
     }
 
     public function rarity() {

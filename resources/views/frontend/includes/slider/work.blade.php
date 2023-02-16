@@ -3,7 +3,7 @@
         @foreach($latest_works as $work)
             <div class="swiper-slide">
                 <div class="slideсard__img">
-                    <img class="showcase__img" src="{{ asset($work->image) }}" alt="{{ $work->name }}">
+                    <img class="showcase__img" src="{{ asset($work->image_path) }}" alt="{{ $work->name }}">
                 </div>
                 <div class="slideсard__info">
                     <h3>Azimus Deryayev</h3>
