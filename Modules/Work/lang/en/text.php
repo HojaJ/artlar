@@ -11,5 +11,6 @@ return [
     'updated_by' => 'Updated By',
     'deleted_by' => 'Deleted By',
     'action' => 'Action',
+    'artist' => 'Artist'
 
 ];

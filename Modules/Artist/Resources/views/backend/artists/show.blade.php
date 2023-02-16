@@ -34,9 +34,7 @@
 
         <div class="row mt-4">
             <div class="col-12">
-
-                @include('backend.includes.show')
-
+                @include ("artist::backend.includes.show")
             </div>
         </div>
     </div>

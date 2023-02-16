@@ -55,6 +55,9 @@
                                 @lang("work::text.name")
                             </th>
                             <th>
+                                @lang("work::text.artist")
+                            </th>
+                            <th>
                                 @lang("work::text.updated_at")
                             </th>
                             <th class="text-end">
@@ -108,6 +111,10 @@
             {
                 data: 'name',
                 name: 'name'
+            },
+            {
+                data: 'artist',
+                name: 'artist'
             },
             {
                 data: 'updated_at',

@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Modules\Artist\Models\Artist;
+use Modules\Work\Models\Work;
 
 class FrontendController extends Controller
 {
 
     public function index()
     {
-        $body_class = '';
-
-        return view('frontend.index', compact('body_class'));
+        $latest_works = Work::latest()->with('artist')->take(5)->get();
+        $artists = Artist::latest()->take(5)->get();
+        return view('frontend.index', compact('latest_works', 'artists'));
     }
 
 

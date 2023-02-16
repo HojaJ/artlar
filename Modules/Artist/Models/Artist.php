@@ -6,6 +6,7 @@ use App\Models\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use Modules\Work\Models\Work;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Sluggable\HasSlug;
@@ -19,6 +20,8 @@ class Artist extends BaseModel
     use SoftDeletes;
     use HasSlug;
 
+    protected $appends = ['full_name'];
+
     protected $table = 'artists';
 
     public function getActivitylogOptions(): LogOptions
@@ -30,12 +33,22 @@ class Artist extends BaseModel
             ->useLogName($this->table);
     }
 
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->name) . ' ' . ucfirst($this->surname);
+    }
+
     public function country() {
         return $this->belongsTo('Modules\Country\Models\Country');
     }
 
     public function profession() {
         return $this->belongsTo('Modules\Profession\Models\Profession');
+    }
+
+    public function works()
+    {
+        return $this->hasMany(Work::class);
     }
 
 

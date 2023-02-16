@@ -206,6 +206,7 @@ class BackendBaseController extends Controller
 
         $$module_name_singular = $module_model::findOrFail($id);
 
+
         logUserAccess($module_title.' '.$module_action.' | Id: '.$$module_name_singular->id);
 
         return view(
