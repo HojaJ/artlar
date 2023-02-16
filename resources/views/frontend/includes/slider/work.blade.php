@@ -6,7 +6,7 @@
                     <img class="showcase__img" src="{{ asset($work->image_path) }}" alt="{{ $work->name }}">
                 </div>
                 <div class="slideсard__info">
-                    <h3>Azimus Deryayev</h3>
+                    <h3>{{ $work->artist->full_name }}</h3>
                     <h4>{{ $work->name }}</h4>
                 </div>
             </div>
