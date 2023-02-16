@@ -43,6 +43,8 @@ class ImageOptimize extends Command
                     if($img->filesize() > 2500000){
                         $percentage = 100 - intval((($img->filesize() - 2500000) / $img->filesize()) * 100);
                         $img->encode('jpg')->save($full_path, $percentage);
+                    }else{
+                        $img->encode('jpg')->save($full_path);
                     }
                 }
             }
