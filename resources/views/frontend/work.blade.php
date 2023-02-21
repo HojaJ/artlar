@@ -6,28 +6,30 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('img/work2.png') }}" class="img-fluid" alt="Work">
+                <img src="{{ asset($work->image_path) }}" class="img-fluid" alt="{{ $work->name }}">
                 <a href="#" class="d-block my-5 text-center view_in">View in room</a>
             </div>
             <div class="col-md-6 ps-md-5">
                 <div class="work-info">
                     <div>
-                        <h3>Pablo Picasso</h3>
-                        <h4>Les Demoiselles d'Avignon, 1907</h4>
+                        <h3>{{ $work->artist->full_name }}</h3>
+                        <h4>{{ $work->name }}, {{ $work->year }}</h4>
                     </div>
 
                     <ul>
-                        <li>61 × 48 in | 154.9 × 121.9 cm</li>
-                        <li>Oil canvas</li>
-                        <li>Cubism</li>
+                        <li>{{$work->size_length}} x {{$work->size_height}} cm</li>
+{{--                        <li>61 × 48 in | 154.9 × 121.9 cm</li>--}}
+
+                        <li>{{ $work->materials }}</li>
+                        <li>{{ $work->movements }}</li>
                         <li class="text-decoration-underline">
                             <a data-bs-toggle="modal" data-bs-target="#rarityModal">
-                                Unique work
+                                {{ $work->rarity->name }}
                             </a>
                         </li>
                     </ul>
                     <div class="work-info__price">
-                        <span>US$5,500</span>
+                        <span>${{ $work->price }}</span>
                         <button class="button">Add to Bag</button>
                         <button class="button button-reverse">Add to Wishlist</button>
                     </div>
@@ -41,11 +43,11 @@
                 <div id="accordion" class="accordion">
                     <h3>DESCRIPTION</h3>
                     <div>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                        <p>{{ $work->description }}</p>
                     </div>
                     <h3>ABOUT THE ARTIST </h3>
                     <div>
-                        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+                        <p>{{ $work->artist->biography }}</p>
                     </div>
                     <h3>SHIPPING AND RETURNS</h3>
                     <div>
@@ -55,7 +57,26 @@
                 </div>
             </div>
         </div>
-        @include('frontend.includes.slider.work')
+
+        <div class="swiper slideSlider">
+            <div class="swiper-wrapper">
+                @foreach($latest_works as $work)
+                    <div class="swiper-slide">
+                        <div class="slideсard__img">
+                            <img class="showcase__img" src="{{ asset($work->image_path) }}" alt="{{ $work->name }}">
+                        </div>
+                        <div class="slideсard__info">
+                            <h3>{{ $work->artist->full_name }}</h3>
+                            <h4>{{ $work->name }}</h4>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="swiper-scrollbar"></div>
+            {{--    <div class="swiper-pagination"></div>--}}
+        </div>
+
+        {{--        @include('frontend.includes.slider.work')--}}
     </div>
 
 

@@ -3,6 +3,10 @@
   height: 560px;
   margin-top: 140px;
 
+    .swiper-wrapper {
+        align-items: baseline;
+    }
+
   @media screen and (max-width: $breakpoint-xl){
     height: 500px;
     margin-top: 200px;

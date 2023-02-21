@@ -40,8 +40,7 @@ class Artist extends BaseModel
 
     public function getImagePathAttribute()
     {
-        $url =  explode('/',$this->image);
-        return $url[2] . '/' . $url[3] .'/' . pathinfo($url[4],PATHINFO_FILENAME) . '.jpg';
+        return substr($this->image, 0, strrpos($this->image, '.') ) . '.jpg';
     }
 
     public function country() {

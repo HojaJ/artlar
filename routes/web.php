@@ -34,9 +34,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('/', 'FrontendController@index')->name('index');
 
     Route::get('artists', 'FrontendController@artists')->name('artists');
-    Route::get('artist', 'FrontendController@artist')->name('artist');
+    Route::get('artist/{id}', 'FrontendController@artist')->name('artist');
     Route::get('works', 'FrontendController@works')->name('works');
-    Route::get('work', 'FrontendController@work')->name('work');
+    Route::get('work/{id}', 'FrontendController@work')->name('work');
     Route::get('about', 'FrontendController@about')->name('about');
     Route::get('contact', 'FrontendController@contact')->name('contact');
     Route::get('in-news', 'FrontendController@in_the_news')->name('in_the_news');

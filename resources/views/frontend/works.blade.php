@@ -183,23 +183,27 @@
 
                     <div class="col-lg-9">
                         <div class="row">
-                            @for($i = 0; $i < 12; $i++)
+
+                            @foreach($works as $work)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic">
-                                            <a href="{{ route('frontend.work') }}"><img src="{{ asset('img/work1.png') }}" alt="Work"></a>
+                                            <a href="{{ route('frontend.work', $work->id) }}"><img src="{{ asset($work->image_path) }}" alt="{{ $work->name }}"></a>
                                         </div>
 
                                         <div class="product__item__text">
-                                            <h6>Frida Kahlo</h6>
-                                            <a href="{{ route('frontend.work') }}">Frieda and Diego Rivera</a>
-                                            <h5>US$15.000</h5>
+                                            <h6>{{ $work->artist->fullname }}</h6>
+                                            <a href="{{ route('frontend.work',$work->id) }}">{{ $work->name }}</a>
+                                            <h5>{{ $work->price }}$</h5>
                                         </div>
                                     </div>
                                 </div>
-                            @endfor
+                            @endforeach
                         </div>
-                        @include('frontend.includes.pagination')
+                        {{ $works->links('vendor.pagination.default') }}
+
+
+{{--                        @include('frontend.includes.pagination')--}}
 
                     </div>
                 </div>

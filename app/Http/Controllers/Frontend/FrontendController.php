@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
 use Modules\Artist\Models\Artist;
 use Modules\Work\Models\Work;
 
@@ -20,28 +22,27 @@ class FrontendController extends Controller
     public function artists()
     {
         $body_class = '';
-
-        return view('frontend.artists', compact('body_class'));
+        $artists = Artist::orderBy('name')->get();
+        return view('frontend.artists',compact('artists'));
     }
 
-    public function artist()
+    public function artist(Request $request, $id)
     {
-        $body_class = '';
-
-        return view('frontend.artist', compact('body_class'));
+        $artists = Artist::orderBy('name')->get();
+        $artist= Artist::findOrFail($id);
+        return view('frontend.artist', compact('artist', 'artists'));
     }
 
     public function works()
     {
-        $body_class = '';
-
-        return view('frontend.works', compact('body_class'));
+        $works = Work::latest()->with('artist')->paginate(12);
+        return view('frontend.works', compact('works'));
     }
-    public function work()
+    public function work(Request $request, $id)
     {
-        $body_class = '';
-
-        return view('frontend.work', compact('body_class'));
+        $work = Work::findOrFail($id);
+        $latest_works = Work::latest()->where('artist_id', $work->artist->id)->take(5)->get();
+        return view('frontend.work', compact('work','latest_works'));
     }
 
     public function about()

@@ -19,7 +19,7 @@ class Work extends BaseModel
     use SoftDeletes;
     use HasSlug;
 
-    protected $appends = ['image_path'];
+    protected $appends = ['image_path', 'materials','movements'];
 
 
     protected $table = 'works';
@@ -35,8 +35,7 @@ class Work extends BaseModel
 
     public function getImagePathAttribute()
     {
-        $url =  explode('/',$this->image);
-        return $url[2] . '/' . $url[3] .'/' . pathinfo($url[4],PATHINFO_FILENAME) . '.jpg';
+        return substr($this->image, 0, strrpos($this->image, '.') ) . '.jpg';
     }
 
     public function rarity() {
@@ -54,6 +53,17 @@ class Work extends BaseModel
     public function material() {
         return $this->belongsToMany('Modules\Material\Models\Material');
     }
+
+    public function getMaterialsAttribute()
+    {
+        return $this->material->implode('name',',');
+    }
+
+    public function getMovementsAttribute()
+    {
+        return $this->movement->implode('name',',');
+    }
+
 
     public function artist() {
         return $this->belongsTo('Modules\Artist\Models\Artist');
