@@ -14,8 +14,8 @@
                     <div class="col-lg-6">
                         <div class="artist__info">
                             <h4 class="artist__info-name">{{ $artist->full_name }}</h4>
-                            <p class="artist__info-prof">{{ $artist->profession->name }}</p>
-                            <p class="artist__info-country">{{ $artist->country->name }}</p>
+                            <p class="artist__info-prof">{{ $artist->profession?->name }}</p>
+                            <p class="artist__info-country">{{ $artist->country?->name }}</p>
                             <p class="artist__info-date">Born: {{ $artist->dob }}</p>
                             @if($artist->dead && $artist->dod )
                                 <p class="artist__info-date">Died: {{$artist->dod}}</p>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6  text-lg-end">
-                        <img src="{{ asset($artist->image) }}" alt="Artist" class="img-fluid artist-photo">
+                        <img src="{{ asset($artist->image_path) }}" alt="Artist" class="img-fluid artist-photo">
                     </div>
                 </div>
             </div>
