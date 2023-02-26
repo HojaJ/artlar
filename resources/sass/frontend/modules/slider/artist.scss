@@ -1,7 +1,13 @@
+.see_all_link {
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+}
 .swiper.slideSlider {
   width: 100%;
-  height: 560px;
   margin-top: 140px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     .swiper-wrapper {
         align-items: baseline;
@@ -39,6 +45,7 @@
     -ms-flex-align: start;
     -webkit-align-items:flex-start;
     align-items: start;
+      padding-bottom: 50px;
   }
   .swiper-slide img {
     display: block;
@@ -105,9 +112,10 @@
     margin: 50% auto 0;
   }
   &__title {
-    margin-top: -7%;
-    position: relative;
-    z-index: 1;
+      margin-top: -9%;
+      position: relative;
+      z-index: 1;
+      display: block;
     @media screen and (max-width: $breakpoint-xl){
       position: absolute;
       top:0;
@@ -132,6 +140,7 @@
        font-size: 1.5rem;
        font-style: italic;
        color: #D8D8D8;
+
        @media screen and (max-width: $breakpoint-sm){
          font-size: 1rem;
        }

@@ -10,7 +10,7 @@
                 <div class="showcase__info">
                     <h3>{{ $work->artist->full_name }}</h3>
                     <h4>{{ $work->name }}</h4>
-                    <span>US${{ $work->price }}</span>
+                    <span>{{ $work->price }}$</span>
                 </div>
             </div>
         @endforeach

@@ -9,21 +9,25 @@
         </div>
         <div class="slideсard">
 
+
             @include('frontend.includes.slider.artist')
-            <a href="{{ route('frontend.artists') }}" class="slideсard__title d-inline-block">
-                <h2 class="title-h2">All Artists</h2>
-            </a>
+            <a class="see_all_link" href="{{ route('frontend.artists') }}">See All <i class="fa-solid fa-angle-right"></i></a>
+            <div class="slideсard__title">
+                <h2 class="title-h2">Artists</h2>
+            </div>
         </div>
 
         <div class="slideсard">
             @include('frontend.includes.slider.work')
-            <a class="slideсard__title d-inline-block" href="{{ route('frontend.works') }}">
-                <h2 class="title-h2">All Works</h2>
-            </a>
+
+            <a class="see_all_link" href="{{ route('frontend.works') }}">See All <i class="fa-solid fa-angle-right"></i></a>
+            <div class="slideсard__title">
+                <h2 class="title-h2">Works</h2>
+            </div>
         </div>
 
-        <div class="slideсard new_slidecard">
-            <a class="slideсard__title d-inline-block" href="{{ route('frontend.arrivals') }}">
+        <div class="new_slidecard">
+            <a class="slideсard__title" href="{{ route('frontend.arrivals') }}">
                 <h2 class="title-h2">New Arrivals</h2>
             </a>
             @include('frontend.includes.slider.new')

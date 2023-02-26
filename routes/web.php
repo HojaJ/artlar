@@ -85,6 +85,18 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin'
     Route::get('/', 'BackendController@index')->name('home');
     Route::get('dashboard', 'BackendController@index')->name('dashboard');
 
+
+    /*
+     *
+     * Pages Settings
+     *
+     */
+
+    $module_name = 'pages';
+    $controller_name = 'PagesController';
+
+    Route::get("$module_name.index", ['as' => "$module_name.index", 'uses' => "$controller_name@index"]);
+
     /*
      *
      *  Settings Routes

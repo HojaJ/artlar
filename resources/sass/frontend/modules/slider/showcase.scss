@@ -34,14 +34,15 @@
     width: 60px;
   }
   .swiper-pagination-bullet {
-    font-family: 'Girona W05', sans-serif;
+      font-family: 'Girona', sans-serif;
+      font-style: normal;
     display: block;
     font-size: 2.25rem;
     font-weight: 500;
     color: #ffffff;
     opacity: 1;
     background: transparent;
-    height: 30px;
+      height: 35px;
     outline: none;
     @media screen and (max-width: $breakpoint-sm){
       font-size: 1.5rem;
@@ -49,12 +50,12 @@
     }
   }
   .swiper-pagination-bullet-active {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin-left: 40px;
-    margin-bottom: 30px;
-    transition: all 0.5s ease;
-    margin-top: -20px;
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-left: 35px;
+      margin-bottom: 40px;
+      transition: all 0.1s linear;
+      margin-top: -12px;
 
     @media screen and (max-width: $breakpoint-sm) {
       margin-left: 20px;

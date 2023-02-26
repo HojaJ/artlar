@@ -1,4 +1,27 @@
 .accordion_wrapper{
+    .accordion-item {
+        background-color: transparent;
+        border: none;
+    }
+    .accordion-button{
+        background-color: transparent;
+        color: $font_color;
+        font-weight: 700;
+        font-size: 2rem;
+        &::before{
+            content: "\2b";
+            font-family: 'Font Awesome 6 Free';
+            margin-right: 20px;
+        }
+        &:not(.collapsed)::before{
+            content: "\f068";
+        }
+        &::after{
+            display: none;
+        }
+    }
+
+
   margin-top: 50px;
   margin-bottom: 300px;
   .ui-icon {

@@ -31,6 +31,42 @@ class GenerateMenus
             ]);
 
 
+            //
+            $pageControl =  $menu->add('<i class="nav-icon fa-solid fa-user-tie"></i> '.__('Pages'), [
+                'class' => 'nav-group',
+            ])
+                ->data([
+                    'order'         => 100,
+                    'activematches' => [
+                        'admin/artists*',
+                        'admin/countries*',
+                        'admin/professions*',
+                    ],
+                    'permission'    => ['view_backend'],
+                ]);
+
+            $pageControl->link->attr([
+                'class' => 'nav-link nav-group-toggle',
+                'href'  => '#',
+            ]);
+
+            // Submenu: Countries
+            $pageControl->add('<i class="nav-icon fa-solid fa-user-alt"></i> Slider', [
+                'route' => 'backend.pages.index',
+                'class' => 'nav-item',
+            ])
+            ->data([
+                'order'         => 80,
+                'activematches' => 'admin/pages*',
+                'permission'    => ['view_backend'],
+            ])
+            ->link->attr([
+                'class' => 'nav-link',
+            ]);
+
+
+
+
             // Separator: Access Management
             $menu->add('Management', [
                 'class' => 'nav-title',

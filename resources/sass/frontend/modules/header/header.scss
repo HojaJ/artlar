@@ -3,9 +3,25 @@
   padding-top: 25px;
 
   .navbar-collapse {
-    margin-top: 20px;
-    border-bottom: 1px solid #FFFFFF;
-    border-top: 1px solid #FFFFFF;
+      margin-top: 30px;
+      position: relative;
+      &::after,
+      &::before{
+          content: "";
+          position: absolute;
+          width: 102vw;
+          left: -17vw;
+          height: 1px;
+          background-color: #D8D8D8;
+      }
+      &::before{
+          top: 0;
+      }
+
+      &::after{
+          bottom: 0;
+      }
+
   }
 
   .navbar-toggler {
@@ -24,8 +40,7 @@
       font-size: 1.375rem;
     }
   }
-  .logo {
-    max-width: 270px;
+  .logo {max-width: 230px;
     margin: 0 auto;
     display: block;
     @media screen and (max-width: $breakpoint-lg) {

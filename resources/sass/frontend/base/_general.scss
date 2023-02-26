@@ -1,10 +1,11 @@
-html,
+html{
+    overflow-x: hidden;
+}
 body {
     position: relative;
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 html {
     font-size: 16px;
@@ -119,7 +120,7 @@ ol {
 }
 .title-h2 {
     font-family: "Girona W05", sans-serif;
-    font-size: 4.5rem;
+    font-size: 7.5rem;
 
     @media screen and (max-width: $breakpoint-xl){
         font-size: 4rem;

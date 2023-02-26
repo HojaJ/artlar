@@ -37,11 +37,29 @@ return [
         ],
     ],
     'email' => [
-        'title' => 'Email',
-        'desc'  => 'Email settings for app',
+        'title' => 'Contact Us',
+        'desc'  => 'Contact Us page settings for app',
         'icon'  => 'fas fa-envelope',
 
         'elements' => [
+            [
+                'type'  => 'text', // input fields type
+                'data'  => 'string', // data type, string, int, boolean
+                'name'  => 'address', // unique name for field
+                'label' => 'Address', // you know what label it is
+                'rules' => 'required', // validation rule of laravel
+                'class' => '', // any class for input
+                'value' => 'Ashgabat, Turkmenistan 744000', // default value if you want
+            ],
+            [
+                'type'  => 'text', // input fields type
+                'data'  => 'string', // data type, string, int, boolean
+                'name'  => 'phone', // unique name for field
+                'label' => 'Phone', // you know what label it is
+                'rules' => 'required', // validation rule of laravel
+                'class' => '', // any class for input
+                'value' => '+993(62) 123456', // default value if you want
+            ],
             [
                 'type'  => 'email', // input fields type
                 'data'  => 'string', // data type, string, int, boolean
@@ -49,7 +67,7 @@ return [
                 'label' => 'Email', // you know what label it is
                 'rules' => 'required|email', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => 'info@example.com', // default value if you want
+                'value' => 'artlar@gmail.com', // default value if you want
             ],
         ],
 

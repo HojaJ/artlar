@@ -4,6 +4,8 @@ let cur = el.find('.lang__current');
 let options = el.find('.lang__options li');
 let content = $('#content');
 
+
+
 $('.price-number__increment').on('click', function (event ){
     let counting = $(this).closest('.price-number').find('.price_counting');
     let data = parseInt(counting.text());
