@@ -54,6 +54,16 @@
     object-fit: cover;
   }
 
+    .see_all_link {
+        position: absolute;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+        a {
+            font-size: 1.5rem;
+        }
+    }
+
     .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
         bottom: 0;
         z-index: 999;

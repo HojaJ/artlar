@@ -182,33 +182,53 @@
                     </div>
 
                     <div class="col-lg-9">
-                        <div class="row">
+                        <div class="row" id="works_wrapper">
+                            @include('frontend.work_load')
 
-                            @foreach($works as $work)
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="product__item">
-                                        <div class="product__item__pic">
-                                            <a href="{{ route('frontend.work', $work->id) }}"><img src="{{ asset($work->image_path) }}" alt="{{ $work->name }}"></a>
-                                        </div>
-
-                                        <div class="product__item__text">
-                                            <h6>{{ $work->artist->fullname }}</h6>
-                                            <a href="{{ route('frontend.work',$work->id) }}">{{ $work->name }}</a>
-                                            <h5>{{ $work->price }}$</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+                            <div class="ajax-load text-center" style="display:none">
+                                <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More post</p>
+                            </div>
                         </div>
-                        {{ $works->links('vendor.pagination.default') }}
-
-
-{{--                        @include('frontend.includes.pagination')--}}
-
                     </div>
                 </div>
             </div>
         </section>
     </div>
 @endsection
+
+@push('after-scripts')
+    <script type="text/javascript">
+        window.jQuery(function($) {
+            var page = 1;
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                    page++;
+                    loadMoreData(page);
+                }
+            });
+
+            function loadMoreData(page) {
+                $.ajax(
+                    {
+                        url: '?page=' + page,
+                        type: "get",
+                        beforeSend: function () {
+                            $('.ajax-load').show();
+                        }
+                    })
+                    .done(function (data) {
+                        if (data.html == " ") {
+                            $('.ajax-load').html("No more records found");
+                            return;
+                        }
+                        $('.ajax-load').hide();
+                        $("#works_wrapper").append(data.html);
+                    })
+                    .fail(function (jqXHR, ajaxOptions, thrownError) {
+                        alert('server not responding...');
+                    });
+            }
+        })
+    </script>
+@endpush
 

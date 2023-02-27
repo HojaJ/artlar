@@ -11593,6 +11593,10 @@ ol {
   }
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .button {
   font-family: "Josefin Sans", sans-serif;
   color: #11A6E0;
@@ -11602,7 +11606,7 @@ ol {
   font-weight: 700;
   padding: 0 22px;
   height: 40px;
-  line-height: 1.3;
+  line-height: 2.5;
   font-size: 1.125rem;
   cursor: pointer;
 }
@@ -12059,6 +12063,15 @@ p.big_parag {
   height: 100%;
   object-fit: cover;
 }
+.swiper.slideSlider .see_all_link {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swiper.slideSlider .see_all_link a {
+  font-size: 1.5rem;
+}
 .swiper.slideSlider .swiper-scrollbar, .swiper.slideSlider .swiper-scrollbar.swiper-scrollbar-horizontal {
   bottom: 0;
   z-index: 999;
@@ -12182,7 +12195,7 @@ p.big_parag {
 
 .accordion_wrapper {
   margin-top: 50px;
-  margin-bottom: 300px;
+  margin-bottom: 50px;
 }
 .accordion_wrapper .accordion-item {
   background-color: transparent;
@@ -12198,6 +12211,7 @@ p.big_parag {
   content: "+";
   font-family: "Font Awesome 6 Free";
   margin-right: 20px;
+  margin-top: -8px;
 }
 .accordion_wrapper .accordion-button:not(.collapsed)::before {
   content: "\f068";
@@ -12504,7 +12518,7 @@ p.big_parag {
 }
 @media screen and (min-width: 768px) {
   .artist-list {
-    padding-left: 80px;
+    padding-left: 20px;
     margin-top: 100px;
     margin-bottom: 300px;
   }
@@ -12682,6 +12696,8 @@ p.big_parag {
   text-align: center;
   font-size: 1.75rem;
   font-weight: 500;
+  height: 60px;
+  line-height: 60px;
 }
 .work-info__price .button-reverse {
   margin-top: 22px;
@@ -12691,7 +12707,7 @@ p.big_parag {
 }
 
 .work-accordion {
-  margin: 100px 0 60px;
+  margin: 100px auto 60px;
 }
 
 .ui-accordion-header {

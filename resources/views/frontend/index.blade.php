@@ -11,7 +11,6 @@
 
 
             @include('frontend.includes.slider.artist')
-            <a class="see_all_link" href="{{ route('frontend.artists') }}">See All <i class="fa-solid fa-angle-right"></i></a>
             <div class="slideсard__title">
                 <h2 class="title-h2">Artists</h2>
             </div>
@@ -19,8 +18,6 @@
 
         <div class="slideсard">
             @include('frontend.includes.slider.work')
-
-            <a class="see_all_link" href="{{ route('frontend.works') }}">See All <i class="fa-solid fa-angle-right"></i></a>
             <div class="slideсard__title">
                 <h2 class="title-h2">Works</h2>
             </div>

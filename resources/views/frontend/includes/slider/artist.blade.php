@@ -15,6 +15,11 @@
                 </div>
 
         @endforeach
+        <div class="swiper-slide">
+            <div class="justify-content-center align-items-center see_all_link">
+                <a href="{{ route('frontend.artists') }}">See All <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
     </div>
     <div class="swiper-scrollbar"></div>
 {{--    <div class="swiper-pagination"></div>--}}

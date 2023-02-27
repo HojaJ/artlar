@@ -39,15 +39,22 @@ class FrontendController extends Controller
         return view('frontend.artist', compact('artist', 'artists'));
     }
 
-    public function works()
+    public function works(Request $request)
     {
         $works = Work::latest()->with('artist')->paginate(12);
+
+        if ($request->ajax()) {
+            $view = view('frontend.work_load', compact('works'))->render();
+            return response()->json(['html' => $view]);
+        }
+
         return view('frontend.works', compact('works'));
     }
     public function work(Request $request, $id)
     {
         $work = Work::findOrFail($id);
         $latest_works = Work::latest()->where('artist_id', $work->artist->id)->take(5)->get();
+
         return view('frontend.work', compact('work','latest_works'));
     }
 
@@ -92,10 +99,14 @@ class FrontendController extends Controller
         return view('frontend.wishlist', compact('body_class'));
     }
 
-    public function arrivals()
+    public function arrivals(Request $request)
     {
-        $latest_works = Work::latest()->with('artist')->paginate();
-        return view('frontend.arrivals', compact('latest_works'));
+        $works = Work::latest()->with('artist')->paginate(12);
+        if ($request->ajax()) {
+            $view = view('frontend.work_load', compact('works'))->render();
+            return response()->json(['html' => $view]);
+        }
+        return view('frontend.arrivals', compact('works'));
     }
 
 

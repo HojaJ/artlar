@@ -12,6 +12,7 @@
             content: "\2b";
             font-family: 'Font Awesome 6 Free';
             margin-right: 20px;
+            margin-top: -8px;
         }
         &:not(.collapsed)::before{
             content: "\f068";
@@ -23,7 +24,7 @@
 
 
   margin-top: 50px;
-  margin-bottom: 300px;
+    margin-bottom: 50px;
   .ui-icon {
     margin-right: 10px;
     font-size: 1.2rem;
