@@ -61,8 +61,18 @@
         left: 37%;
         height: 12px;
         background: transparent;
-        border: 1px solid $font_color;
+        //border-bottom: 2px solid #ffffff;
         cursor: pointer;
+        border-radius: 0;
+        &:before{
+            content: "";
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            top: 3px;
+        }
         @media screen and (max-width: $breakpoint-xl){
             width: 100%;
             left: 0;
@@ -112,10 +122,11 @@
     margin: 50% auto 0;
   }
   &__title {
-      margin-top: -9%;
+      margin-top: -8%;
       position: relative;
       z-index: 1;
-      display: block;
+      display: inline-block;
+
     @media screen and (max-width: $breakpoint-xl){
       position: absolute;
       top:0;

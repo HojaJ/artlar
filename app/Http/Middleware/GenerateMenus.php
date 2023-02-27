@@ -64,6 +64,20 @@ class GenerateMenus
                 'class' => 'nav-link',
             ]);
 
+            $pageControl->add('<i class="nav-icon fa-solid fa-user-alt"></i> About Us', [
+                'route' => 'backend.aboutus.index',
+                'class' => 'nav-item',
+            ])
+                ->data([
+                    'order'         => 80,
+                    'activematches' => 'admin/pages*',
+                    'permission'    => ['view_backend'],
+                ])
+                ->link->attr([
+                    'class' => 'nav-link',
+                ]);
+
+
 
 
 

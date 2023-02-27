@@ -27,9 +27,10 @@
         </div>
 
         <div class="new_slidecard">
-            <a class="slideсard__title" href="{{ route('frontend.arrivals') }}">
+            <div class="slideсard__title">
                 <h2 class="title-h2">New Arrivals</h2>
-            </a>
+            </div>
+            <a class="see_all_link" href="{{ route('frontend.artists') }}">See All <i class="fa-solid fa-angle-right"></i></a>
             @include('frontend.includes.slider.new')
         </div>
     </div>

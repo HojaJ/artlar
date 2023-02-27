@@ -55,4 +55,27 @@ class PagesController extends Controller
         Setting::add('slide', json_encode($request->slide), 'json');
         return redirect()->back()->with('status', 'Settings has been saved.');
     }
+
+
+    public function aboutus()
+    {
+        $module_title = 'Contact US';
+        $module_icon = $this->module_icon;
+        $module_action = 'List';
+
+//        $$module_name = $module_model::paginate();
+
+
+        return view(
+            "backend.aboutus.index",
+            compact('module_title', 'module_action','module_icon')
+        );
+    }
+
+    public function aboutus_store(Request $request)
+    {
+        dd($request->all());
+        Setting::add('slide', json_encode($request->slide), 'json');
+        return redirect()->back()->with('status', 'Settings has been saved.');
+    }
 }
