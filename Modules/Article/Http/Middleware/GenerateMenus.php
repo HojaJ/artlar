@@ -47,6 +47,21 @@ class GenerateMenus
             ->link->attr([
                 'class' => 'nav-link',
             ]);
+
+            // Submenu: In the News
+            $articles_menu->add('<i class="nav-icon fas fa-file-alt"></i> '.__('In the News'), [
+                'route' => 'backend.innews.index',
+                'class' => 'nav-item',
+            ])
+                ->data([
+                    'order'         => 92,
+                    'activematches' => 'admin/innews*',
+                    'permission'    => ['view_innews'],
+                ])
+                ->link->attr([
+                    'class' => 'nav-link',
+                ]);
+
             // Submenu: Categories
 //            $articles_menu->add('<i class="nav-icon fas fa-sitemap"></i> '.__('Categories'), [
 //                'route' => 'backend.categories.index',

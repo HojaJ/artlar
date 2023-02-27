@@ -1,6 +1,6 @@
 <div class="swiper heroSlider">
     <div class="swiper-wrapper">
-        @foreach($latest_works as $work)
+        @foreach($selected_works as $work)
             <div class="swiper-slide">
                 <div class="swiper-zoom-container">
                     <a href="{{ route('frontend.work', $work->id) }}">

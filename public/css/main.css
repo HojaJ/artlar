@@ -11642,8 +11642,8 @@ p.big_parag {
 .header .navbar-collapse::after, .header .navbar-collapse::before {
   content: "";
   position: absolute;
-  width: 102vw;
-  left: -17vw;
+  width: 120vw;
+  left: -25vw;
   height: 1px;
   background-color: #D8D8D8;
 }
@@ -11920,6 +11920,7 @@ p.big_parag {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  overflow-y: hidden;
 }
 .swiper.heroSlider .swiper-pagination {
   display: flex;

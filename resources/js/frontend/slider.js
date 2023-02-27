@@ -7,7 +7,7 @@ $(function () {
         direction: "vertical",
         autoHeight: true,
         grabCursor: true,
-        zoom: true,
+        // zoom: true,
         keyboard: true,
         pagination: {
             el: ".swiper-pagination",

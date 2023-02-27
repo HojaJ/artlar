@@ -1,0 +1,13 @@
+{
+    "name": "Innews",
+    "alias": "innews",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Innews\\Providers\\InnewsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

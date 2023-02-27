@@ -96,6 +96,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin'
     $controller_name = 'PagesController';
 
     Route::get("$module_name.index", ['as' => "$module_name.index", 'uses' => "$controller_name@index"]);
+    Route::post("$module_name", "$controller_name@store")->name("$module_name.store");
 
     /*
      *

@@ -27,12 +27,12 @@
 
         <div class="row mt-4">
             <div class="col">
-                <form method="post" action="{{ route('backend.settings.store') }}" class="form-horizontal" role="form">
+                <form method="post" action="{{ route('backend.pages.store') }}" class="form-horizontal" role="form">
                     {!! csrf_field() !!}
 
-                    @if(count(config('setting_fields', [])) )
+                    @if(count(config('pages_settings', [])) )
 
-                    @foreach(config('setting_fields') as $section => $fields)
+                    @foreach(config('pages_settings') as $section => $fields)
                     <div class="card card-accent-primary mb-4">
                         <div class="card-header">
                             <i class="{{ Arr::get($fields, 'icon', 'glyphicon glyphicon-flash') }}"></i>

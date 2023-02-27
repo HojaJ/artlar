@@ -11,5 +11,6 @@
     "Movement": true,
     "Material": true,
     "Size": true,
-    "Work": true
+    "Work": true,
+    "Innews": true
 }

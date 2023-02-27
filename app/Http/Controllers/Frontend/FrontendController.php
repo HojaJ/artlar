@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Modules\Artist\Models\Artist;
+use Modules\Innews\Models\Innews;
 use Modules\Work\Models\Work;
 
 class FrontendController extends Controller
@@ -13,9 +14,14 @@ class FrontendController extends Controller
 
     public function index()
     {
+        $array = json_decode(setting('slide'), true);
+        $selected_works = collect();
+        foreach ($array as $key => $value){
+            $selected_works->push(Work::where('id', $value)->first());
+        }
         $latest_works = Work::latest()->with('artist')->take(5)->get();
         $artists = Artist::latest()->take(5)->get();
-        return view('frontend.index', compact('latest_works', 'artists'));
+        return view('frontend.index', compact('latest_works', 'artists','selected_works'));
     }
 
 
@@ -61,9 +67,8 @@ class FrontendController extends Controller
 
     public function in_the_news()
     {
-        $body_class = '';
-
-        return view('frontend.in_the_news', compact('body_class'));
+        $innews = Innews::latest()->paginate(12);
+        return view('frontend.in_the_news', compact('innews'));
     }
 
     public function news()
@@ -89,9 +94,8 @@ class FrontendController extends Controller
 
     public function arrivals()
     {
-        $body_class = '';
-
-        return view('frontend.arrivals', compact('body_class'));
+        $latest_works = Work::latest()->with('artist')->paginate();
+        return view('frontend.arrivals', compact('latest_works'));
     }
 
 

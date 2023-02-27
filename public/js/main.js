@@ -143,7 +143,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
     direction: "vertical",
     autoHeight: true,
     grabCursor: true,
-    zoom: true,
+    // zoom: true,
     keyboard: true,
     pagination: {
       el: ".swiper-pagination",
