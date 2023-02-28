@@ -31,7 +31,7 @@
                     <time>Nov 20, 2022</time>
                 </div>
                 <div class="col-lg-3">
-                    <img src="{{asset('img/latest_1.png')}}" alt="Latest News">
+                    <img class="img-fluid" src="{{asset('img/latest_1.png')}}" alt="Latest News">
                 </div>
                 <div class="col-lg-6">
                     <div class="latest_news_block">
@@ -51,7 +51,7 @@
                     <time>Nov 20, 2022</time>
                 </div>
                 <div class="col-lg-3">
-                    <img src="{{asset('img/latest_2.png')}}" alt="Latest News">
+                    <img lass="img-fluid" src="{{asset('img/latest_2.png')}}" alt="Latest News">
                 </div>
                 <div class="col-lg-6">
                     <div class="latest_news_block">
@@ -73,7 +73,7 @@
                     <time>Nov 20, 2022</time>
                 </div>
                 <div class="col-lg-3">
-                    <img src="{{ asset('img/latest_3.png') }}" alt="Latest News">
+                    <img lass="img-fluid" src="{{ asset('img/latest_3.png') }}" alt="Latest News">
                 </div>
                 <div class="col-lg-6">
                     <div class="latest_news_block">
@@ -87,6 +87,6 @@
         </div>
     </div>
 
-    @include('frontend.includes.pagination')
+{{--    @include('frontend.includes.pagination')--}}
 
 @endsection

@@ -12824,7 +12824,7 @@ p.big_parag {
   }
 }
 .latest_news img {
-  max-width: 300px;
+  max-width: 100%;
   margin: 0 auto;
   display: block;
 }

@@ -113,7 +113,7 @@
 
 
 
-    <div class="modal fade rarityModal" id="rarityModal"     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade rarityModal" id="rarityModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="border-radius: 0;">
                 <div class="p-5">
