@@ -8,14 +8,14 @@
 
         <div class="row flex-column-reverse flex-md-row">
             <div class="col-md-6">
-                <div class="contact__info d-flex flex-column justify-content-between h-100">
+                <div class="contact__info d-flex flex-column justify-content-around h-100">
                     <p>{{ setting('address') }}</p>
                     <p>{{ setting('phone') }}</p>
                     <p>{{ setting('email') }}</p>
                 </div>
             </div>
-            <div class="col-md-6 mb-5 mb-md-0">
-                <img src="{{ asset('img/contact.jpg') }}" alt="Contact Us">
+            <div class="col-md-6 mb-5 mb-md-0 text-center">
+                <img class="img-fluid" src="{{ asset('img/contact.jpg') }}" alt="Contact Us">
             </div>
         </div>
 

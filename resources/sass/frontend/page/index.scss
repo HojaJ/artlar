@@ -4,7 +4,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: 300px;
+
+    @media screen and (min-width: $breakpoint-xl){
+        height: 100vh;
+    }
+
 
     &__cta {
         display: flex;
@@ -21,9 +26,13 @@
         }
         @media screen and (max-width: $breakpoint-xl){
             bottom:20px;
+
         }
         h2 {
             line-height: 0.7;
+            @media screen and (max-width: $breakpoint-xl){
+                font-size: 3rem;
+            }
         }
     }
 
@@ -61,6 +70,8 @@
     }
     .swiper-scrollbar-drag {
         background-color: $font_color;
+        height: 8px;
+        margin-top: 1px;
     }
 }
 

@@ -8,7 +8,7 @@
   .btn-newsletter{
     margin-left: 10px;
     border-radius: 10px;
-    width: 30%;
+    width: 40%;
 
   }
   .newsletter__input {
@@ -17,15 +17,12 @@
     background-color: transparent;
     color: #ffffff;
     border-bottom: 3px solid #FFFFFF;
-    width: 70%;
+    width: 60%;
     font-weight: 500;
-    font-size: 1.375rem;
-    vertical-align: bottom;
-
-    @media screen and (max-width: $breakpoint-sm){
-      max-width: 200px;
       font-size: 1.1rem;
-    }
+    vertical-align: bottom;
+      border-radius: 10px;
+      padding: 8px;
   }
   .newsletter__input::placeholder {
     font-weight: 500;

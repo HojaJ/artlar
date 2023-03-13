@@ -163,7 +163,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
     spaceBetween: 30,
     grabCursor: true,
     breakpoints: {
-      576: {
+      776: {
         slidesPerView: 3
       },
       1200: {
@@ -185,20 +185,18 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
       modifier: 2,
       slideShadows: true
     },
-    spaceBetween: 100,
+    spaceBetween: 50,
     loop: false,
-    pagination: false
-
-    // breakpoints: {
-    //     576:{
-    //         slidesPerView: 3,
-    //     },
-    //     768: {
-    //         slidesPerView: 4,
-    //     }
-    // }
+    pagination: false,
+    breakpoints: {
+      576: {
+        spaceBetween: 70
+      },
+      768: {
+        spaceBetween: 100
+      }
+    }
   });
-
   var newsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".newsSlider", {
     scrollbar: {
       el: ".swiper-scrollbar",

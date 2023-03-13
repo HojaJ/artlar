@@ -11604,18 +11604,11 @@ body.modal-open {
   border: none;
   outline: none;
   font-weight: 700;
-  padding: 0 22px;
   height: 40px;
-  line-height: 2.5;
-  font-size: 1.125rem;
   cursor: pointer;
-}
-@media screen and (max-width: 576px) {
-  .button {
-    padding: 9px 16px 6px;
-    font-size: 1rem;
-    max-width: 110px;
-  }
+  padding: 7px 10px 3px;
+  font-size: 1rem;
+  max-width: 110px;
 }
 
 .button:hover {
@@ -11799,7 +11792,7 @@ p.big_parag {
 .newsletter .btn-newsletter {
   margin-left: 10px;
   border-radius: 10px;
-  width: 30%;
+  width: 40%;
 }
 .newsletter .newsletter__input {
   outline: none;
@@ -11807,16 +11800,12 @@ p.big_parag {
   background-color: transparent;
   color: #ffffff;
   border-bottom: 3px solid #FFFFFF;
-  width: 70%;
+  width: 60%;
   font-weight: 500;
-  font-size: 1.375rem;
+  font-size: 1.1rem;
   vertical-align: bottom;
-}
-@media screen and (max-width: 576px) {
-  .newsletter .newsletter__input {
-    max-width: 200px;
-    font-size: 1.1rem;
-  }
+  border-radius: 10px;
+  padding: 8px;
 }
 .newsletter .newsletter__input::placeholder {
   font-weight: 500;
@@ -11892,6 +11881,11 @@ p.big_parag {
 .footer .footer__links {
   font-weight: 500;
   font-size: 1.875rem;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer__links {
+    font-size: 20px;
+  }
 }
 
 .swiper.heroSlider {
@@ -11978,6 +11972,11 @@ p.big_parag {
   margin: 0 auto;
   height: 100%;
 }
+@media screen and (max-width: 768px) {
+  .showcase__img {
+    max-width: 100%;
+  }
+}
 .showcase__info {
   text-align: left;
   position: absolute;
@@ -12017,7 +12016,7 @@ p.big_parag {
   width: 100%;
   margin-top: 140px;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 105px;
 }
 .swiper.slideSlider .swiper-wrapper {
   align-items: baseline;
@@ -12036,7 +12035,8 @@ p.big_parag {
 @media screen and (max-width: 450px) {
   .swiper.slideSlider {
     height: 300px;
-    margin-top: 150px;
+    margin-top: 110px;
+    padding-top: 5px;
   }
 }
 .swiper.slideSlider .swiper-slide {
@@ -12097,13 +12097,18 @@ p.big_parag {
     left: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .swiper.slideSlider .swiper-scrollbar, .swiper.slideSlider .swiper-scrollbar.swiper-scrollbar-horizontal {
     bottom: 50px;
   }
 }
 .swiper.slideSlider .swiper-scrollbar-drag {
   background-color: #ffffff;
+}
+@media screen and (max-width: 992px) {
+  .swiper.slideSlider .swiper-scrollbar-drag {
+    height: 8px;
+  }
 }
 
 .slideсard {
@@ -12156,12 +12161,27 @@ p.big_parag {
 
 .new_slidecard {
   position: relative;
-  margin-top: 120px;
-  min-height: 800px;
+  min-height: 600px;
+}
+@media screen and (min-width: 768px) {
+  .new_slidecard {
+    min-height: 800px;
+    margin-top: 120px;
+  }
 }
 .new_slidecard .see_all_link {
   right: 0;
-  top: 50px;
+  top: 80px;
+}
+@media screen and (min-width: 576px) {
+  .new_slidecard .see_all_link {
+    top: 75px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .new_slidecard .see_all_link {
+    top: 50px;
+  }
 }
 .new_slidecard .swiper-wrapper {
   padding: 40px 0;
@@ -12189,8 +12209,17 @@ p.big_parag {
   z-index: 1;
 }
 .new_slidecard img {
-  max-width: 400px;
+  max-width: 250px;
   transition: all 0.3s ease;
+  max-height: 300px;
+  height: auto;
+  width: auto;
+}
+@media screen and (min-width: 576px) {
+  .new_slidecard img {
+    max-height: 500px;
+    max-width: 400px;
+  }
 }
 
 .accordion_wrapper {
@@ -12337,6 +12366,12 @@ p.big_parag {
 .product__item {
   margin-bottom: 80px;
 }
+.product__item__pic a {
+  height: 270px;
+}
+.product__item__pic img {
+  max-height: 100%;
+}
 .product__item__text {
   padding-top: 20px;
 }
@@ -12392,7 +12427,12 @@ p.big_parag {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100vh;
+  height: 300px;
+}
+@media screen and (min-width: 1200px) {
+  .news {
+    height: 100vh;
+  }
 }
 .news__cta {
   display: flex;
@@ -12414,6 +12454,11 @@ p.big_parag {
 }
 .news__cta h2, .news__cta .h2 {
   line-height: 0.7;
+}
+@media screen and (max-width: 1200px) {
+  .news__cta h2, .news__cta .h2 {
+    font-size: 3rem;
+  }
 }
 .news .swiper-slide {
   height: 100%;
@@ -12447,6 +12492,8 @@ p.big_parag {
 }
 .news .swiper-scrollbar-drag {
   background-color: #ffffff;
+  height: 8px;
+  margin-top: 1px;
 }
 
 .auction {

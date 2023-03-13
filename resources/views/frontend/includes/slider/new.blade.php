@@ -1,4 +1,4 @@
-<div class="swiper newSlider" dir="rtl">
+<div class="swiper position-relative newSlider" dir="rtl">
     <div class="swiper-wrapper">
         @foreach($latest_works as $work)
 

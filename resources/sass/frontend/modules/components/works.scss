@@ -90,6 +90,16 @@
 
 .product__item {
   margin-bottom: 80px;
+
+    &__pic{
+        a{
+            height: 270px;
+        }
+
+        img {
+            max-height: 100%;
+        }
+    }
     &__text {
       padding-top: 20px;
       h6 {

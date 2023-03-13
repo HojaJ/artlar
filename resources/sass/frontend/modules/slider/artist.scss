@@ -7,7 +7,7 @@
   width: 100%;
   margin-top: 140px;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 105px;
 
     .swiper-wrapper {
         align-items: baseline;
@@ -21,8 +21,9 @@
     height: 400px;
   }
   @media screen and (max-width: 450px){
-    height: 300px;
-    margin-top: 150px;
+        height: 300px;
+      margin-top: 110px;
+      padding-top: 5px;
   }
 
 
@@ -87,12 +88,16 @@
             width: 100%;
             left: 0;
         }
-        @media screen and (max-width: $breakpoint-md){
+        @media screen and (max-width: $breakpoint-sm){
             bottom: 50px;
         }
     }
     .swiper-scrollbar-drag {
         background-color: $font_color;
+
+        @media screen and (max-width: $breakpoint-lg){
+            height: 8px;
+        }
     }
 
 

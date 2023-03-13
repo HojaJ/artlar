@@ -24,7 +24,7 @@
 {{--                        <li>{{ $work->movements }}</li>--}}
                         <li class="text-decoration-underline">
                             <a data-bs-toggle="modal" data-bs-target="#rarityModal">
-                                {{ $work->rarity->name }}
+                                {{ $work->rarity?->name }}
                             </a>
                         </li>
                     </ul>

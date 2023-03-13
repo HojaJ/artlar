@@ -28,7 +28,7 @@ $(function () {
         spaceBetween: 30,
         grabCursor: true,
         breakpoints: {
-            576:{
+            776:{
                 slidesPerView: 3,
             },
             1200: {
@@ -51,18 +51,19 @@ $(function () {
             modifier: 2,
             slideShadows: true
         },
-        spaceBetween: 100,
+        spaceBetween: 50,
         loop: false,
         pagination: false,
 
-        // breakpoints: {
-        //     576:{
-        //         slidesPerView: 3,
-        //     },
-        //     768: {
-        //         slidesPerView: 4,
-        //     }
-        // }
+        breakpoints: {
+
+            576:{
+                spaceBetween: 70,
+            },
+            768: {
+                spaceBetween: 100,
+            }
+        }
     });
 
     let newsSlider = new Swiper(".newsSlider", {

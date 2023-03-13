@@ -7,7 +7,7 @@
                     <img class="showcase__img" src="{{ asset($work->image_path) }}" alt="{{ $work->name }}">
                 </div>
                 <div class="slideсard__info">
-                    <h3>{{ $work->artist->full_name }}</h3>
+                    <h3>{{ucfirst(substr($work->artist->name, 0, 1))}}. {{ $work->artist->surname }}</h3>
                     <h4>{{ $work->name }}</h4>
                 </div>
                 </a>

@@ -13,7 +13,7 @@
                 @include('frontend.includes.newsletter')
             </div>
             <div class="col-lg-6 mt-5 mt-lg-0">
-                <div class="d-flex justify-content-between justify-content-lg-end ">
+                <div class="d-flex justify-content-start gap-4 justify-content-lg-end ">
                     <ul class="footer__links me-md-5">
                         <li><a href="{{ route('frontend.in_the_news') }}">In the News</a></li>
                         <li><a href="{{ route('frontend.about') }}">About us</a></li>

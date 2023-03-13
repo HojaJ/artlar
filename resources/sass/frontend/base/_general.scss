@@ -140,17 +140,12 @@ body.modal-open {
     border: none;
     outline: none;
     font-weight: 700;
-    padding: 0 22px;
     height: 40px;
-    line-height: 2.5;
-    font-size: 1.125rem;
     cursor: pointer;
+    padding: 7px 10px 3px;
+    font-size: 1rem;
+    max-width: 110px;
 
-    @media screen and (max-width: $breakpoint-sm){
-        padding: 9px 16px 6px;
-        font-size: 1rem;
-        max-width: 110px;
-    }
 }
 
 .button:hover {

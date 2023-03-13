@@ -3,7 +3,7 @@
 @section('title') {{app_name()}} @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container   ">
         <div>
             @include('frontend.includes.slider.showcase')
         </div>
