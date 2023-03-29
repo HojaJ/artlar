@@ -11703,6 +11703,27 @@ p.big_parag {
   }
 }
 
+.search-results {
+  position: absolute;
+  display: block;
+  color: #333;
+  z-index: 99;
+  top: 40px;
+  left: 0;
+  width: 100%;
+}
+.search-results ul {
+  background: white;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+.search-results ul li {
+  margin: 5px 0;
+}
+.search-results ul a {
+  font-size: 1.2rem;
+}
+
 .searchbutton {
   position: absolute;
   font-size: 22px;
@@ -11733,7 +11754,7 @@ p.big_parag {
   outline: none;
   color: #D8D8D8;
   border: none;
-  width: 0;
+  width: 330px;
   top: 0;
   padding: 0;
   z-index: 10;
@@ -11776,6 +11797,7 @@ p.big_parag {
     padding: 6px;
     background-color: #ffffff;
     width: 360px;
+    color: #000;
   }
 }
 @media screen and (max-width: 576px) {
@@ -12610,8 +12632,9 @@ p.big_parag {
 }
 
 .artist-page {
-  margin-top: 100px;
-  padding-bottom: 150px;
+  padding-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 150px;
   border-bottom: 1px solid #ffffff;
 }
 .artist-page h2, .artist-page .h2 {

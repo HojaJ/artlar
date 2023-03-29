@@ -6,10 +6,10 @@
     <div class="container">
         <h2 class="title-h2">Artists</h2>
 
-        <div class="search-container mt-3">
-            <input onkeyup="myFunction()" class="search" id="myInput" type="text" placeholder="Search">
-            <label class="searchbutton" for="search"><i class="fas fa-magnifying-glass"></i></label>
-        </div>
+{{--        <div class="search-container mt-3">--}}
+{{--            <input onkeyup="myFunction()" class="search" id="myInput" type="text" placeholder="Search">--}}
+{{--            <label class="searchbutton" for="search"><i class="fas fa-magnifying-glass"></i></label>--}}
+{{--        </div>--}}
 
         <ul class="artist-list"  id="myUL">
             @foreach($artists  as $artist)

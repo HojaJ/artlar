@@ -4,7 +4,7 @@
 
                 <div class="swiper-slide">
                     <a href="{{ route('frontend.work', $work->id) }}" class="d-block">
-                    <div class="arrivals__img">
+                    <div class="arrivals__img text-center">
                         <img src="{{ asset($work->image_path) }}" alt="img">
 
                         <div class="arrivals__info" dir="ltr">

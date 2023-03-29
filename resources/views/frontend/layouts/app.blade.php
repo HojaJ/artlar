@@ -71,7 +71,37 @@
 {{--<script src="{{ mix('js/frontend.js') }}"></script>--}}
 <script src="{{ asset('js/vendor.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script>
+    jQuery(document).ready(function($){
+        let timeoutID = null;
+        let search_ul = $('.search-results');
+        $('#search_input').keyup(function (e) {
+            clearTimeout(timeoutID);
+            const value = e.target.value;
+            if( value === "" || value.length < 2){
+                search_ul.css('display', 'none');
+            }else {
+                search_ul.css('display', 'block');
+                timeoutID = setTimeout(() => getSearchedElements(value),500);
+            }
+        });
 
+        function getSearchedElements(value) {
+            $.ajax({
+                url:"{{ route('frontend.search') }}",
+                method:'GET',
+                data:{query:value},
+                dataType:'json',
+                success:function(data) {
+                    search_ul.html(data.data);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    });
+</script>
 @stack('after-scripts')
 
 </html>

@@ -113,6 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 window.jQuery = __webpack_require__.g.jquery = (jquery__WEBPACK_IMPORTED_MODULE_0___default());
+
 // const icons = {
 //     header: "fas fa-plus",
 //     activeHeader: "fas fa-minus"

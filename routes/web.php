@@ -30,8 +30,10 @@ Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index'
 Route::get('image', function (){
     \Artisan::call('optimize:images');
 });
+
 Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.'], function () {
     Route::get('/', 'FrontendController@index')->name('index');
+    Route::get('/search', 'FrontendController@search')->name('search');
 
     Route::get('artists', 'FrontendController@artists')->name('artists');
     Route::get('artist/{id}', 'FrontendController@artist')->name('artist');

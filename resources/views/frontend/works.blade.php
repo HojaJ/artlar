@@ -24,18 +24,20 @@
                                             <div class="card-body">
                                                 <div class="shop__sidebar__categories">
                                                     <ul class="nice-scroll" tabindex="1">
-                                                        <li><label><input type="checkbox" name="artist" value="">Azimus Deryayev</label></li>
-                                                        <li><label><input type="checkbox">Abraham Arkhipov</label></li>
-                                                        <li><label><input type="checkbox">Frida Kahlo</label></li>
-                                                        <li><label><input type="checkbox">Van Eyck</label></li>
-                                                        <li><label><input type="checkbox">Caravaggio</label></li>
-                                                        <li><label><input type="checkbox">Oscar-Claude Monet</label></li>
-                                                        <li><label><input type="checkbox">Leonardo da Vinci</label></li>
-                                                        <li><label><input type="checkbox">Giotto</label></li>
-                                                        <li><label><input type="checkbox">Pablo Picasso</label></li>
-                                                        <li><label><input type="checkbox">Michelangelo</label></li>
-                                                        <li><label><input type="checkbox">Bacon</label></li>
-                                                        <li><label><input type="checkbox">Paul Klee</label></li>
+                                                        @foreach($all_artist as $artist)
+                                                            <li><label><input type="checkbox" class="artist-checkbox" name="artist" value="{{$artist->id}}">{{$artist->full_name}}</label></li>
+                                                        @endforeach
+{{--                                                        <li><label><input type="checkbox">Abraham Arkhipov</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Frida Kahlo</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Van Eyck</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Caravaggio</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Oscar-Claude Monet</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Leonardo da Vinci</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Giotto</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Pablo Picasso</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Michelangelo</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Bacon</label></li>--}}
+{{--                                                        <li><label><input type="checkbox">Paul Klee</label></li>--}}
                                                     </ul>
                                                 </div>
                                             </div>
@@ -199,6 +201,38 @@
 @push('after-scripts')
     <script type="text/javascript">
         window.jQuery(function($) {
+            let url;
+            let artists = [];
+            $('.artist-checkbox').change(function (){
+                $('.artist-checkbox').each(function () {
+                    if(this.checked){
+                        artists.push(parseInt(this.value))
+                    }
+                })
+
+                updateTheContent(artists);
+            })
+
+            function updateTheContent(artists) {
+                let pathname = window.location.pathname;
+
+                // window.history.pushState('artists','artists', 'artists=[' + artists+']');
+                $.ajax(
+                    {
+                        url: '?artists=' + artists,
+                        type: "get",
+                        // beforeSend: function () {
+                        //     $('.ajax-load').show();
+                        // }
+                    })
+                    .done(function (data) {
+                        $("#works_wrapper").load(data.html);
+                    })
+                    .fail(function (jqXHR, ajaxOptions, thrownError) {
+                        alert('server not responding...');
+                    });
+            }
+
             var page = 1;
             $(window).scroll(function () {
                 if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
@@ -206,7 +240,6 @@
                     loadMoreData(page);
                 }
             });
-
             function loadMoreData(page) {
                 $.ajax(
                     {
